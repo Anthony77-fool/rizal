@@ -52,6 +52,20 @@
     .mandate-text h2 {
       visibility: hidden; /* Hide heading initially */
     }
+
+		.typing-cursor {
+			display: inline-block;
+			width: 2px;
+			background: black;
+			margin-left: 3px;
+			animation: blink 0.7s infinite;
+		}
+
+		@keyframes blink {
+				0% { opacity: 1; }
+				50% { opacity: 0; }
+				100% { opacity: 1; }
+		}
   </style>
 
 </head>
@@ -111,7 +125,12 @@
               <div class="row align-items-center">
                   <div class="col-lg-6 mb-5 mb-lg-0">
                       <div class="mandate-text" style="opacity: 1;">
-                          <h2>Why Study Rizal?</h2>
+                          <!-- <h2>Why Study Rizal?</h2> -->
+													 <h2>
+																<span id="typingText"></span>
+																<span class="typing-cursor"></span>
+														</h2>
+
                           <p>
                               In 1956, lawmakers passed <span class="mandate-highlight">Republic Act 1425</span> (The Rizal Law) to strengthen Filipino identity. They believed that reading Rizal's works would help young Filipinos understand freedom, nationalism, and the values that shaped our nation.
                           </p>
