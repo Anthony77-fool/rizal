@@ -1,0 +1,405 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fff;
+}
+
+/* Navigation */
+nav {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555 !important;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #d4a574;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: #d4a574 !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Banner */
+.heart-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Dark overlay for text visibility */
+.heart-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.heart-hero h1 {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.hero-description-large {
+    font-size: clamp(1rem, 4vw, 1.75rem);
+    color: #e8e8e8;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/* Scroll Indicator */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+/* Introduction Section */
+.intro-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.intro-quote {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 30px;
+    font-style: italic;
+    line-height: 1.8;
+}
+
+.intro-text {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.9;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Love Stories Section */
+.love-section {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.love-category-title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.love-category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background-color: #d4a574;
+}
+
+.love-card {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    opacity: 0;
+}
+
+.love-card.animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.love-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateY(-5px);
+}
+
+.love-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.love-card-image {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #fce4e4 0%, #f9d5d9 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.love-card-title {
+    flex-grow: 1;
+}
+
+.love-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.love-card .subtitle {
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.love-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.love-card p:last-child {
+    margin-bottom: 0;
+}
+
+.love-card-highlight {
+    background-color: #fef5f5;
+    border-left: 4px solid #d4427c;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.timeline-title {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 40px;
+    opacity: 0;
+}
+
+.timeline-item.animate {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #d4427c;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #d4427c;
+}
+
+.timeline-item h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+}
+
+.timeline-item p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Image Placeholders */
+.image-placeholder {
+    background: linear-gradient(135deg, #e8d4d4 0%, #f0e4e4 100%);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #999;
+    font-size: 0.9rem;
+    margin: 40px 0;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.image-placeholder-large {
+    background: linear-gradient(135deg, #e8d4d4 0%, #f0e4e4 100%);
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #999;
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #999;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .love-section,
+    .timeline-section,
+    .intro-section {
+        padding: 50px 20px;
+    }
+
+    .love-card {
+        padding: 25px;
+    }
+
+    .heart-hero h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    .love-card-image {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+}
+
+.nav-link.active {
+        color: #d4a574 !important; /* Keep active color */
+    }
+
+    .nav-link.active::after {
+        width: 100%; /* Keep underline visible */
+    }
+
+    /* Ensure active link color is not overridden by hover on other links */
+    .navbar-nav .nav-link:not(.active):hover::after {
+        width: 100%;
+    }
