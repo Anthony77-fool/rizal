@@ -342,7 +342,15 @@ nav {
     flex-direction: column;
     gap: 10px;
     margin-bottom: 20px;
+    overflow: hidden; /* add this */
 }
+
+.image-placeholder-large img.love-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
 
 /* Footer */
 footer {
