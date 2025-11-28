@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>History & Law</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/index-styles.css">
+  <link rel="stylesheet" href="styles/history_and_laws-styles.css">
+
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container-fluid px-3 px-md-5">
+      <a class="navbar-brand" href="index.html">JOSÉ RIZAL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="man.html">THE MAN</a></li>
+            <li class="nav-item"><a class="nav-link" href="lovers.html">THE HEART</a></li>
+            <li class="nav-item"><a class="nav-link" href="works.html">THE WORKS</a></li>
+            <li class="nav-item"><a class="nav-link active" href="history_and_laws.html">HISTORY & LAW</a></li>
+            <li class="nav-item"><a class="nav-link" href="legacy.html">LEGACY</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">ACKNOWLEDGEMENTS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" 
+      style="background-image: url('images/history_and_laws/history_and_laws-bg-hero.jpg'); 
+            background-size: cover; 
+            background-position: center;">
+      
+      <div class="hero-content">
+        <div class="hero-label">Colonial Society & Legal Legacy</div>
+        <h1>History & Law</h1>
+        <h2>19th-Century Hierarchy and the Rizal Law (RA 1425)</h2>
+        <p>Visualize the social pyramid Rizal confronted—from Peninsulares down to Indios—and see how his ideas were enshrined in law to shape Filipino minds.</p>
+        <a href="#pyramid"><button class="btn-primary-custom">Explore the Pyramid <i class="fas fa-arrow-right"></i></button></a>
+      </div>
+
+      <div class="scroll-indicator d-none d-md-block">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+
+  </section>
+
+  <!-- Pyramid Section -->
+  <section class="pyramid-section" id="pyramid">
+    <h2 class="section-title">19th Century Philippine Society</h2>
+    <p class="section-subtitle">A colonial hierarchy: Peninsulares → Insulares → Mestizos → Indios. Rizal fought discrimination from the bottom layer upward.</p>
+
+    <div class="pyramid-container">
+      <!-- Left: CSS Triangle Infographic -->
+      <div>
+        <div class="triangle-wrapper">
+          <div class="triangle">
+            <!-- Row 1 (top) -->
+            <div class="tri-row" id="tri-row-1">
+              <div class="tri-cell" style="grid-column: 2 / span 2">
+                <span class="rank">Top</span>
+                <div class="tri-label"><i class="fas fa-crown tri-icon"></i> Peninsulares</div>
+              </div>
+            </div>
+            <!-- Row 2 -->
+            <div class="tri-row" id="tri-row-2">
+              <div class="tri-cell" style="grid-column: 2 / span 2">
+                <span class="rank">2</span>
+                <div class="tri-label"><i class="fas fa-landmark tri-icon"></i> Insulares</div>
+              </div>
+            </div>
+            <!-- Row 3 -->
+            <div class="tri-row" id="tri-row-3">
+              <div class="tri-cell" style="grid-column: 2 / span 2">
+                <span class="rank">3</span>
+                <div class="tri-label"><i class="fas fa-user-friends tri-icon"></i> Mestizos</div>
+              </div>
+            </div>
+            <!-- Row 4 (base) -->
+            <div class="tri-row" id="tri-row-4">
+              <div class="tri-cell" style="grid-column: 1 / span 4">
+                <span class="rank">Base</span>
+                <div class="tri-label"><i class="fas fa-tractor tri-icon"></i> Indios</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Interactive Cards -->
+      <div class="pyramid-cards">
+        <!-- Peninsulares -->
+        <article class="pyramid-card">
+          <div class="card-image-wrapper" data-role="zoom" data-title="Peninsulares — Spanish officials">
+            <span class="card-badge">Peninsulares</span>
+            <img class="card-image" src="" alt="Peninsulares officials" />
+            <div class="card-image-placeholder">
+              <img src="images/history_and_laws/peninsulares.webp" alt="Rizal's Love Letters" 
+							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview (modal)</div>
+          </div>
+          <div class="card-body">
+            <h4>Colonial ruling class</h4>
+            <p>Spaniards born in Spain at the top of the hierarchy—governors, bishops, high military. Held the highest power and privileges.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Manila, Intramuros</span>
+              <span><i class="fas fa-calendar"></i> 19th century</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Insulares -->
+        <article class="pyramid-card">
+          <div class="card-image-wrapper" data-role="zoom" data-title="Insulares — colonial families">
+            <span class="card-badge">Insulares</span>
+            <img class="card-image" src="" alt="Insulares colonial families" />
+            <div class="card-image-placeholder">
+              <img src="images/history_and_laws/insulares.avif" alt="Insulares" 
+							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview (modal)</div>
+          </div>
+          <div class="card-body">
+            <h4>Philippine-born Spaniards</h4>
+            <p>Influential landowners and professionals—below Peninsulares but above Mestizos and Indios in status.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Manila, Bulacan</span>
+              <span><i class="fas fa-calendar"></i> 19th century</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mestizos -->
+        <article class="pyramid-card">
+          <div class="card-image-wrapper" data-role="zoom" data-title="Mestizos — merchants & students">
+            <span class="card-badge">Mestizos</span>
+            <img class="card-image" src="" alt="Mestizos merchants and students" />
+            <div class="card-image-placeholder">
+              <img src="images/history_and_laws/mestizos.jpg" alt="Mestizos Merchants" 
+							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview (modal)</div>
+          </div>
+          <div class="card-body">
+            <h4>Mixed ancestry middle class</h4>
+            <p>Prosperous traders, artisans, and educated professionals—bridging colonial and native worlds.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Binondo, Tondo</span>
+              <span><i class="fas fa-calendar"></i> 19th century</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Indios -->
+        <article class="pyramid-card">
+          <div class="card-image-wrapper" data-role="zoom" data-title="Indios — native Filipinos">
+            <span class="card-badge">Indios</span>
+            <img class="card-image" src="" alt="Indios native Filipinos farmers and townsfolk" />
+            <div class="card-image-placeholder">
+              <img src="images/history_and_laws/indios.webp" alt="Mestizos Merchants" 
+							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview (modal)</div>
+          </div>
+          <div class="card-body">
+            <h4>Native Filipinos</h4>
+            <p>The majority population—bearing tribute and labor—whose dignity and rights Rizal fought to uplift.</p>
+            <div class="card-meta">
+              <span><i class="fas fa-map-marker-alt"></i> Luzon, Visayas, Mindanao</span>
+              <span><i class="fas fa-calendar"></i> 19th century</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rizal Law Section -->
+  <section class="law-section" id="rizal-law">
+    <h2 class="section-title">The Rizal Law (RA 1425)</h2>
+    <p class="section-subtitle">Conflict → Compromise → Goal</p>
+
+    <div class="law-container">
+      <div class="law-grid">
+        <!-- Left: Illustrations / placeholders -->
+        <div class="law-illustrations">
+          <!-- Document scan -->
+          <div class="law-image-block" data-role="zoom" data-title="RA 1425 document scan">
+            <span class="card-badge">RA 1425</span>
+            <img class="card-image" src="" alt="RA 1425 scan" />
+            <div class="card-image-placeholder">
+              <img src="images/history_and_laws/official-doc.jpg" alt="Mestizos Merchants" 
+							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview (modal)</div>
+          </div>
+          <!-- Classroom scene -->
+          <div class="law-image-block" data-role="zoom" data-title="Classroom reading Noli/Fili">
+            <span class="card-badge">Classroom</span>
+            <img class="card-image" src="" alt="Students reading Noli and Fili" />
+            <div class="card-image-placeholder">
+              <img src="images/history_and_laws/student-reading-book.jpg" alt="Mestizos Merchants" 
+							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview (modal)</div>
+          </div>
+          <!-- Church opposition -->
+          <div class="law-image-block" data-role="zoom" data-title="Church opposition imagery">
+            <span class="card-badge">Debates</span>
+            <img class="card-image" src="" alt="Church opposition representation" />
+            <div class="card-image-placeholder">
+              <img src="images/history_and_laws/cross-v-book.jpg" alt="Mestizos Merchants" 
+							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview (modal)</div>
+          </div>
+        </div>
+
+        <!-- Right: Points -->
+        <div class="law-points">
+          <div class="law-point">
+            <h4><i class="fas fa-gavel"></i> The Conflict</h4>
+            <p>The Catholic Church opposed mandatory reading of Noli and Fili.</p>
+          </div>
+          <div class="law-point">
+            <h4><i class="fas fa-handshake"></i> The Compromise</h4>
+            <p>Students may be exempt from unexpurgated versions, but must still learn Rizal’s life and ideals.</p>
+          </div>
+          <div class="law-point">
+            <h4><i class="fas fa-graduation-cap"></i> The Goal</h4>
+            <p>Re-dedicate Filipino youth to freedom, nationalism, and critical thinking.</p>
+          </div>
+
+          <!-- Mini timeline -->
+          <div class="timeline">
+            <div class="timeline-items">
+              <div class="timeline-item">
+                <div class="year">1887</div>
+                <div>Noli Me Tangere published</div>
+              </div>
+              <div class="timeline-item">
+                <div class="year">1891</div>
+                <div>El Filibusterismo published</div>
+              </div>
+              <div class="timeline-item">
+                <div class="year">1956</div>
+                <div>Rizal Law enacted (RA 1425)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- /law-grid -->
+    </div> <!-- /law-container -->
+  </section>
+
+  <!-- Modal (Lightbox) -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="border-radius: 14px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">Preview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img id="modalImage" class="modal-image" src="" alt="Preview" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>A digital archive dedicated to José Rizal's life, works, and enduring legacy</p>
+    <p>© 2024 José Rizal Digital Collection | All Rights Reserved</p>
+    <p style="font-size: 0.85rem; margin-top: 20px;">Developed with respect for history and commitment to education</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll from hero button
+    document.querySelector('.btn-primary-custom').addEventListener('click', function(e) {
+      if (this.parentElement.getAttribute('href') === '#pyramid') {
+        e.preventDefault();
+        document.querySelector('#pyramid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+
+    // Intersection Observer for sections and items
+    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -80px 0px' };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe pyramid container and law container
+    document.querySelectorAll('.pyramid-container, .law-container').forEach((el) => observer.observe(el));
+
+    // Stagger rows in triangle
+    const triRows = ['#tri-row-1', '#tri-row-2', '#tri-row-3', '#tri-row-4'].map(sel => document.querySelector(sel));
+    const triObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const row = entry.target;
+          row.classList.add('visible');
+          triObserver.unobserve(row);
+        }
+      });
+    }, { threshold: 0.2 });
+    triRows.forEach(row => triObserver.observe(row));
+
+    // Reveal pyramid cards with stagger
+    const cards = document.querySelectorAll('.pyramid-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transitionDelay = (idx * 0.12) + 's';
+          entry.target.classList.add('visible');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+    cards.forEach(card => cardObserver.observe(card));
+
+    // Reveal law points with stagger
+    const lawPoints = document.querySelectorAll('.law-point');
+    const lawPointObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transition = 'all 0.6s ease';
+          entry.target.style.transitionDelay = (idx * 0.1) + 's';
+          entry.target.classList.add('visible');
+          lawPointObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    lawPoints.forEach(point => lawPointObserver.observe(point));
+
+    // Reveal timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    const timelineObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, idx) => {
+        if (entry.isIntersecting) {
+          entry.target.style.transition = 'all 0.5s ease';
+          entry.target.style.transitionDelay = (idx * 0.08) + 's';
+          entry.target.classList.add('visible');
+          timelineObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    timelineItems.forEach(item => timelineObserver.observe(item));
+
+    // Lightbox modal on click for any [data-role="zoom"] wrapper
+    const zoomBlocks = document.querySelectorAll('[data-role="zoom"]');
+    const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+    const modalImage = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('imageModalLabel');
+
+    zoomBlocks.forEach(block => {
+      block.addEventListener('click', () => {
+        const img = block.querySelector('.card-image');
+        const title = block.getAttribute('data-title') || 'Preview';
+        if (img && img.getAttribute('src')) {
+          modalImage.src = img.getAttribute('src');
+          modalTitle.textContent = title;
+          modal.show();
+        } else {
+          // No image yet: show placeholder message
+          modalImage.src = '';
+          modalTitle.textContent = 'No image yet';
+          const body = document.querySelector('#imageModal .modal-body');
+          body.innerHTML = '<div style="padding:14px;color:#555;">Add an image source to this block to preview. Placeholder suggests: ' + title + '.</div>';
+          modal.show();
+          setTimeout(() => {
+            body.innerHTML = '<img id="modalImage" class="modal-image" src="" alt="Preview" />';
+          }, 2000);
+        }
+      });
+    });
+
+    // Optional: lightweight parallax on hover for image blocks
+    function parallaxHover(el) {
+      el.addEventListener('mousemove', (e) => {
+        const rect = el.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+        const img = el.querySelector('.card-image');
+        if (img) {
+          img.style.transform = `scale(1.08) translate(${x * 8}px, ${y * 8}px)`;
+        }
+      });
+      el.addEventListener('mouseleave', () => {
+        const img = el.querySelector('.card-image');
+        if (img) {
+          img.style.transform = 'scale(1.05) translate(0,0)';
+        }
+      });
+    }
+    document.querySelectorAll('.card-image-wrapper, .law-image-block').forEach(block => parallaxHover(block));
+
+    // Helper: lazy flag for when you add actual images later
+    // Set data-src on .card-image, then call this to swap when visible
+    const lazyImages = document.querySelectorAll('.card-image');
+    const lazyObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const img = entry.target;
+        if (entry.isIntersecting && img.dataset && img.dataset.src && !img.src) {
+          img.src = img.dataset.src;
+          img.onload = () => { img.style.opacity = '1'; };
+          lazyObserver.unobserve(img);
+        }
+      });
+    }, { threshold: 0.1 });
+    lazyImages.forEach(img => lazyObserver.observe(img));
+  </script>
+</body>
+</html>
