@@ -1,0 +1,813 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navigation */
+nav {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a1a !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #555 !important;
+    margin: 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #d4a574;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover {
+    color: #d4a574 !important;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.man-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.man-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.man-hero h1 {
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    font-weight: 300;
+    color: #ffffff;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.man-hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.75rem);
+    color: #e8e8e8;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-weight: 300;
+    font-style: italic;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: bounce 2s infinite;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+/* Biography Section */
+.bio-section {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.bio-section:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.bio-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bio-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.bio-block.reverse {
+    grid-auto-flow: dense;
+}
+
+.bio-block.reverse .bio-text {
+    grid-column: 2;
+}
+
+.bio-block.reverse .bio-image {
+    grid-column: 1;
+}
+
+.bio-text h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.bio-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #d4a574;
+}
+
+.bio-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.bio-text p strong {
+    font-weight: 600;
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.bio-text ul {
+    margin: 30px 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.bio-text li {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    font-weight: 300;
+}
+
+.bio-text li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #d4a574;
+    font-size: 1.2rem;
+}
+
+.bio-image {
+    position: relative;
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, #e8d4d4 0%, #f0e4e4 100%);
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #999;
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 500px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.image-placeholder-wide {
+    background: linear-gradient(135deg, #e8d4d4 0%, #f0e4e4 100%);
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    color: #999;
+    font-size: 0.9rem;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    min-height: auto;
+}
+
+.bio-text-fade {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.bio-image-fade {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Timeline/Key Facts */
+.fact-box {
+    background: #fff;
+    border-left: 4px solid #d4a574;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.fact-box h4 {
+    color: #d4a574;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.fact-box p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #999;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    .bio-section {
+        padding: 50px 20px;
+    }
+
+    .bio-block {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .bio-block.reverse {
+        grid-auto-flow: unset;
+    }
+
+    .bio-block.reverse .bio-text,
+    .bio-block.reverse .bio-image {
+        grid-column: auto;
+    }
+
+    .image-placeholder,
+    .image-placeholder-wide {
+        min-height: 300px;
+    }
+
+    .man-hero h1 {
+        font-size: clamp(1.5rem, 6vw, 2.5rem);
+    }
+}
+
+/* Flip Card Section */
+.flip-cards-section {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.flip-cards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flip-cards-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 300;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.flip-cards-subtitle {
+    text-align: center;
+    color: #555;
+    margin-bottom: 60px;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* Grid Layout */
+.flip-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flip-card-wrapper {
+    perspective: 1000px;
+    height: 350px;
+}
+
+/* Flip Animation */
+.flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-wrapper:hover .flip-card {
+    transform: rotateY(180deg);
+}
+
+/* Card Faces */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    font-family: 'Garamond', 'Georgia', serif;
+}
+
+/* Front: Book Cover Dummy Image */
+.flip-card-front {
+    background: url('https://via.placeholder.com/300x400?text=Book+Cover') center/cover no-repeat;
+    color: #1a1a1a;
+    text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+/* Back: Open Page / Parchment Dummy Image */
+.flip-card-back {
+    background: url('https://via.placeholder.com/300x400?text=Open+Page') center/cover no-repeat;
+    color: #3b2f2f;
+    transform: rotateY(180deg);
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.05), 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Text Styling */
+.flip-card-front-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.flip-card-front h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.flip-card-front p {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 300;
+}
+
+.flip-card-back h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.flip-card-back p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+/* Example for Scholar card */
+.flip-card-front.scholar {
+    background-image: url('../images/man-images/the-hierophant.jpg'); /* front cover image */
+    background-size: cover; /* make it fill the card */
+    background-position: center;
+}
+
+/* Example for Scholar card */
+.flip-card-front.artist {
+    background-image: url('../images/man-images/the-empress.jpg'); /* front cover image */
+    background-size: cover; /* make it fill the card */
+    background-position: center;
+}
+
+/* Example for Scholar card */
+.flip-card-front.scientist {
+    background-image: url('../images/man-images/the-magician.jpg'); /* front cover image */
+    background-size: cover; /* make it fill the card */
+    background-position: center;
+}
+
+/* Example for Scholar card */
+.flip-card-front.warrior {
+    background-image: url('../images/man-images/Knight-of-Swords.jpg'); /* front cover image */
+    background-size: cover; /* make it fill the card */
+    background-position: center;
+}
+
+/* Example for Scholar card */
+.flip-card-front.physician {
+    background-image: url('../images/man-images/Temperance.jpg'); /* front cover image */
+    background-size: cover; /* make it fill the card */
+    background-position: center;
+}
+
+/* Example for Scholar card */
+.flip-card-front.writer {
+    background-image: url('../images/man-images/the-hermit.jpg'); /* front cover image */
+    background-size: cover; /* make it fill the card */
+    background-position: center;
+}
+
+/* Example for Scholar card */
+.flip-card-front.educator {
+    background-image: url('../images/man-images/The-Sun.jpg'); /* front cover image */
+    background-size: cover; /* make it fill the card */
+    background-position: center;
+}
+
+/* Example for Scholar card */
+.flip-card-front.revolutionary {
+    background-image: url('../images/man-images/The-Tower.jpg'); /* front cover image */
+    background-size: cover; /* make it fill the card */
+    background-position: center;
+}
+
+/* --- ANCIENT / OLD TAROT LOOK --- */
+
+/* GLOBAL: add texture/noise to all flip-card backs */
+.flip-card-back {
+    position: relative;
+    overflow: hidden;
+}
+
+.flip-card-back::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    
+    /* Noise texture */
+    background-image:
+        radial-gradient(rgba(0,0,0,0.08) 1px, transparent 1px),
+        radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);
+    background-size: 3px 3px, 5px 5px;
+    opacity: 0.25;
+}
+
+/* Burnt edges / vignette */
+.flip-card-back::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, transparent 60%, rgba(0,0,0,0.25) 100%);
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.45;
+}
+
+/* ---- ANCIENT COLOR PALETTES ---- */
+.flip-card-back.scholar {
+    background: linear-gradient(180deg, #c9b78a, #f3e6be 45%, #b39b6b);
+    color: #2f2216;
+}
+
+/* Artist — stained mural parchment */
+.flip-card-back.artist {
+    background: linear-gradient(180deg, #cbbd97, #efe2c4 45%, #a9956e);
+    color: #2f2216;
+}
+
+/* Scientist — old lab manuscript */
+.flip-card-back.scientist {
+    background: linear-gradient(180deg, #ccb890, #f6e4c3 45%, #ad9466);
+    color: #2f2216;
+}
+
+/* Warrior — battle-worn scroll */
+.flip-card-back.warrior {
+    background: linear-gradient(180deg, #bfa97f, #e8d6b3 45%, #9d8357);
+    color: #2f2216;
+}
+
+/* Physician — medicinal old paper */
+.flip-card-back.physician {
+    background: linear-gradient(180deg, #d8c695, #f7e8c4 45%, #b79e6f);
+    color: #2f2216;
+}
+
+/* Writer — aged novel / burnt paper */
+.flip-card-back.writer {
+    background: linear-gradient(180deg, #c9b389, #f0dfb9 45%, #a98f63);
+    color: #2f2216;
+}
+
+/* Educator — textbook parchment */
+.flip-card-back.educator {
+    background: linear-gradient(180deg, #d1bf8e, #f5e4be 45%, #b19869);
+    color: #2f2216;
+}
+
+/* Revolutionary — dark vintage political manuscript */
+.flip-card-back.revolutionary {
+    background: linear-gradient(180deg, #b9a679, #e8d6ae 45%, #9d8757);
+    color: #2f2216;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .flip-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .flip-card-wrapper {
+        height: 300px;
+    }
+    .flip-card-front-icon {
+        font-size: 2.5rem;
+    }
+    .flip-card-front h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .flip-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Bio Section 2 Styling */
+.bio-section-2 {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.bio-section-2 .bio-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* Flex layout */
+.bio-section-2 .bio-block {
+  display: flex;
+  flex-wrap: wrap; /* stack on small screens */
+  gap: 50px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+  box-sizing: border-box;
+}
+
+.bio-section-2 .bio-block.reverse {
+  flex-direction: row-reverse; /* alternate sides */
+}
+
+/* Text */
+.bio-section-2 .bio-text {
+  flex: 1 1 100%; /* takes full width on mobile */
+  min-width: 0; /* prevents overflow in flexbox */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.bio-section-2 .bio-text h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.bio-section-2 .bio-text h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background-color: #d4a574;
+}
+
+/* Text paragraphs, lists */
+.bio-section-2 .bio-text p,
+.bio-section-2 .bio-text ul,
+.bio-section-2 .bio-text li,
+.bio-section-2 .fact-box {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-bottom: 15px;
+}
+
+/* Fact Box */
+.bio-section-2 .fact-box {
+  flex: 1 1 100%;
+  padding: 15px 20px;
+  background: #fff8f0;
+  border-left: 4px solid #d4a574;
+  border-radius: 5px;
+}
+
+/* Image */
+.bio-section-2 .bio-image,
+.bio-section-2 .image-placeholder-wide {
+  flex: 1 1 100%; /* full width on mobile */
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.bio-section-2 .bio-image img,
+.bio-section-2 .image-placeholder-wide img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Fade Animation */
+.bio-section-2 .bio-text-fade,
+.bio-section-2 .bio-image-fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.bio-section-2 .bio-text-fade.visible,
+.bio-section-2 .bio-image-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .bio-section-2 .bio-block {
+      flex-direction: column; /* stack text & image */
+      gap: 30px;
+  }
+
+  .bio-section-2 .bio-text h2 {
+      text-align: center; /* center the heading */
+      font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  .bio-section-2 .bio-text p,
+  .bio-section-2 .bio-text ul,
+  .bio-section-2 .bio-text li,
+  .bio-section-2 .fact-box {
+      text-align: left; /* paragraphs still left-aligned */
+      font-size: 0.95rem;
+  }
+
+  .bio-section-2 .fact-box {
+      padding: 10px 15px;
+  }
+
+  .bio-section-2 .bio-image,
+  .bio-section-2 .image-placeholder-wide {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+  }
+
+  .bio-section-2 .bio-image p {
+      text-align: center; /* caption under image centered */
+      font-size: 0.8rem;
+      margin: 5px 0;
+  }
+}
+
+.image-placeholder img.love-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.content-box {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.content-box p, .content-box ul {
+    margin: 0;
+}
+
+.content-box ul {
+    margin-top: 15px;
+    padding-left: 25px;
+}
+
+.content-box li {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #555;
+    position: relative;
+    padding-left: 25px;
+}
+
+.content-box li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #d4a574;
+    font-size: 1.1rem;
+}

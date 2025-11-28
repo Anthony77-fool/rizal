@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Man - José Rizal Biography</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a !important;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #555 !important;
+            margin: 0 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: #d4a574;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover {
+            color: #d4a574 !important;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .man-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .man-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .man-hero h1 {
+            font-size: clamp(2.5rem, 10vw, 5rem);
+            font-weight: 300;
+            color: #ffffff;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .man-hero-subtitle {
+            font-size: clamp(1rem, 4vw, 1.75rem);
+            color: #e8e8e8;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-weight: 300;
+            font-style: italic;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            color: #ffffff;
+            font-size: 1.5rem;
+        }
+
+        /* Biography Section */
+        .bio-section {
+            padding: 80px 20px;
+            background-color: #fff;
+        }
+
+        .bio-section:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .bio-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .bio-block {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .bio-block.reverse {
+            grid-auto-flow: dense;
+        }
+
+        .bio-block.reverse .bio-text {
+            grid-column: 2;
+        }
+
+        .bio-block.reverse .bio-image {
+            grid-column: 1;
+        }
+
+        .bio-text h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 20px;
+        }
+
+        .bio-text h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: #d4a574;
+        }
+
+        .bio-text p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .bio-text p strong {
+            font-weight: 600;
+            color: #1a1a1a;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .bio-text ul {
+            margin: 30px 0;
+            padding-left: 0;
+            list-style: none;
+        }
+
+        .bio-text li {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 300;
+        }
+
+        .bio-text li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #d4a574;
+            font-size: 1.2rem;
+        }
+
+        .bio-image {
+            position: relative;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, #e8d4d4 0%, #f0e4e4 100%);
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: #999;
+            font-size: 0.9rem;
+            flex-direction: column;
+            gap: 10px;
+            min-height: 500px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .image-placeholder-wide {
+            background: linear-gradient(135deg, #e8d4d4 0%, #f0e4e4 100%);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            color: #999;
+            font-size: 0.9rem;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            min-height: auto;
+        }
+
+        .bio-text-fade {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .bio-image-fade {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Timeline/Key Facts */
+        .fact-box {
+            background: #fff;
+            border-left: 4px solid #d4a574;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .fact-box h4 {
+            color: #d4a574;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .fact-box p {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .bio-section {
+                padding: 50px 20px;
+            }
+
+            .bio-block {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .bio-block.reverse {
+                grid-auto-flow: unset;
+            }
+
+            .bio-block.reverse .bio-text,
+            .bio-block.reverse .bio-image {
+                grid-column: auto;
+            }
+
+            .image-placeholder,
+            .image-placeholder-wide {
+                min-height: 300px;
+            }
+
+            .man-hero h1 {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+            }
+        }
+
+        /* Flip Card Styles */
+        .flip-cards-section {
+            padding: 80px 20px;
+            background-color: #f9f9f9;
+        }
+
+        .flip-cards-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flip-cards-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .flip-cards-subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 60px;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .flip-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .flip-card-wrapper {
+            perspective: 1000px;
+            height: 350px;
+        }
+
+        .flip-card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card-wrapper:hover .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .flip-card-front {
+            background: linear-gradient(135deg, #fce4e4 0%, #f9d5d9 100%);
+            color: #1a1a1a;
+        }
+
+        .flip-card-back {
+            background: linear-gradient(135deg, #d4a574 0%, #c49464 100%);
+            color: #fff;
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .flip-card-front h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .flip-card-front p {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 300;
+        }
+
+        .flip-card-back h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .flip-card-back p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        @media (max-width: 768px) {
+            .flip-cards-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .flip-card-wrapper {
+                height: 300px;
+            }
+
+            .flip-card-front-icon {
+                font-size: 2.5rem;
+            }
+
+            .flip-card-front h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .flip-cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md">
+        <div class="container-fluid px-3 px-md-5">
+            <a class="navbar-brand" href="index.html">JOSÉ RIZAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">THE MAN</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">THE HEART</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">THE WORKS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">HISTORY & LAW</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">LEGACY</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ACKNOWLEDGEMENTS</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="man-hero" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583f20270319?w=1920&h=1080&fit=crop'); background-size: cover; background-position: center;">
+        <div class="scroll-indicator d-none d-md-block">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+
+        <div class="hero-content">
+            <h1>The Man</h1>
+            <p class="man-hero-subtitle">Beyond the revolutionary, a scholar, artist, and dreamer who shaped a nation.</p>
+        </div>
+    </section>
+
+    <!-- Early Life Section -->
+    <section class="bio-section">
+        <div class="bio-content">
+            <div class="bio-block">
+                <div class="bio-text bio-text-fade">
+                    <h2>Early Life & Education</h2>
+                    <p>José Protacio Rizal Mercado y Alonso Realonda was born on June 19, 1861, in Calamba, Laguna. His family name "Rizal" originated from the word "Ricial," meaning green fields, officially adopted after the Claveria decree required Filipino families to adopt Spanish surnames.</p>
+                    
+                    <div class="fact-box">
+                        <h4>The Name Rizal</h4>
+                        <p>Adopted from "Ricial" (green fields) after the Claveria Decree, symbolizing both his agricultural heritage and revolutionary ideals rooted in his homeland.</p>
+                    </div>
+
+                    <p><strong>Ateneo de Municipal (1872-1877)</strong></p>
+                    <ul>
+                        <li>Started at the bottom of his class, considered weak and frail</li>
+                        <li>Emerged as the "Emperor" of his class through dedication and brilliance</li>
+                        <li>Excelled in languages, mathematics, and the arts</li>
+                        <li>Formed lasting friendships with future revolutionaries</li>
+                    </ul>
+
+                    <p><strong>University of Santo Tomas (1877-1882)</strong></p>
+                    <ul>
+                        <li>Experienced severe discrimination from Spanish friars</li>
+                        <li>Suffered humiliation in the classroom and dormitory</li>
+                        <li>Decided to pursue further education in Europe</li>
+                        <li>Left for Spain in 1882, never to complete his UST studies</li>
+                    </ul>
+                </div>
+
+                <div class="bio-image bio-image-fade">
+                    <div class="image-placeholder">
+                        <div style="font-size: 2rem;">📚</div>
+                        <p>Insert: Young Rizal Portrait or Ateneo/UST Photo</p>
+                        <p style="font-size: 0.8rem;">Size: 400x500px | Recommended: School uniform, formal portrait</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exile in Dapitan Section -->
+    <section class="bio-section">
+        <div class="bio-content">
+            <div class="bio-block reverse">
+                <div class="bio-image bio-image-fade">
+                    <div class="image-placeholder">
+                        <div style="font-size: 2rem;">🌴</div>
+                        <p>Insert: Dapitan Landscape or Colonial Era Mindanao</p>
+                        <p style="font-size: 0.8rem;">Size: 400x500px | Recommended: Historical town view, nature</p>
+                    </div>
+                </div>
+
+                <div class="bio-text bio-text-fade">
+                    <h2>Exile in Dapitan</h2>
+                    <p>After his involvement with revolutionary movements, Rizal was arrested and exiled to Dapitan, a remote town in Mindanao, from 1892 to 1896. Rather than despair, he transformed this period into one of remarkable productivity and service to the community.</p>
+
+                    <p><strong>Contributions to Dapitan</strong></p>
+                    <ul>
+                        <li>Built a modern water system providing clean water to the town</li>
+                        <li>Designed a relief map of Mindanao for geographical study</li>
+                        <li>Opened and managed a school for local boys</li>
+                        <li>Provided medical care and assistance to residents</li>
+                        <li>Conducted agricultural experiments and improvements</li>
+                    </ul>
+
+                    <p><strong>Scientific Discoveries</strong></p>
+                    <ul>
+                        <li><strong>Draco rizali</strong> — A flying lizard species named in his honor</li>
+                        <li><strong>Apogonia rizali</strong> — A beetle species, another tribute to his contributions</li>
+                        <li>Multiple botanical specimens collected and documented</li>
+                        <li>Advanced the study of Mindanao's natural history</li>
+                    </ul>
+
+                    <div class="fact-box">
+                        <h4>Exile as Service</h4>
+                        <p>Rizal's years in Dapitan revealed his multifaceted genius—not merely an intellectual or revolutionary, but an engineer, educator, physician, and naturalist dedicated to improving human life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scientific Achievements Section -->
+    <section class="bio-section">
+        <div class="bio-content">
+            <div class="bio-block">
+                <div class="bio-text bio-text-fade">
+                    <h2>Scientific Legacy</h2>
+                    <p>Beyond his revolutionary and literary pursuits, Rizal was a serious naturalist and scientist. His observations and collections during his exile in Dapitan contributed meaningfully to the scientific understanding of the Philippines.</p>
+
+                    <p><strong>Species Named After Rizal</strong></p>
+                    <ul>
+                        <li><strong>Draco rizali</strong> — A brown flying lizard endemic to the Philippines</li>
+                        <li><strong>Apogonia rizali</strong> — A beetle species discovered during his naturalist expeditions</li>
+                    </ul>
+
+                    <p><strong>Other Scientific Work</strong></p>
+                    <ul>
+                        <li>Botanical observations and specimen collection</li>
+                        <li>Zoological documentation of Philippine fauna</li>
+                        <li>Geological surveys and mapping projects</li>
+                        <li>Meteorological observations and record-keeping</li>
+                    </ul>
+
+                    <p>His scientific work reflected his belief that knowledge and understanding were pathways to progress—for individuals and nations alike.</p>
+                </div>
+
+                <div class="bio-image bio-image-fade">
+                    <div class="image-placeholder-wide">
+                        <div style="font-size: 2rem;">🦗</div>
+                        <p>Insert: Scientific Specimens, Draco Lizard, or Natural History Collection</p>
+                        <p style="font-size: 0.8rem;">Size: 800x450px | Recommended: Nature illustrations, specimens, scientific drawings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Martyrdom Section -->
+    <section class="bio-section">
+        <div class="bio-content">
+            <div class="bio-block reverse">
+                <div class="bio-image bio-image-fade">
+                    <div class="image-placeholder">
+                        <div style="font-size: 2rem;">⚔️</div>
+                        <p>Insert: Bagumbayan Execution Site or Historical Monument</p>
+                        <p style="font-size: 0.8rem;">Size: 400x500px | Recommended: Rizal Park, execution monument</p>
+                    </div>
+                </div>
+
+                <div class="bio-text bio-text-fade">
+                    <h2>Martyrdom & Legacy</h2>
+                    <p>On December 30, 1896, José Rizal was executed by firing squad at Bagumbayan (now Rizal Park) in Manila. He was 35 years old. Charged with rebellion and sedition, Rizal faced his death with courage and dignity, writing his final poem "Mi Último Adiós" (My Last Farewell) on the eve of his execution.</p>
+
+                    <div class="fact-box">
+                        <h4>December 30, 1896</h4>
+                        <p>Rizal's execution at Bagumbayan transformed a personal tragedy into a national awakening. Nationwide grief crystallized into revolutionary fervor, igniting the Philippine Revolution mere months later.</p>
+                    </div>
+
+                    <p><strong>Impact of His Death</strong></p>
+                    <ul>
+                        <li>Sparked the Philippine Revolution in February 1896</li>
+                        <li>Made him a martyr and national hero for millions</li>
+                        <li>His writings and ideals guided the independence movement</li>
+                        <li>Established him as the greatest Filipino hero for generations</li>
+                        <li>His legacy transcends time—relevant to struggles for freedom worldwide</li>
+                    </ul>
+
+                    <p>Though his life was cut short, Rizal achieved immortality through his ideas, his courage, and his unwavering commitment to truth and justice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flip Cards Section -->
+    <section class="flip-cards-section">
+        <div class="flip-cards-container">
+            <h2 class="flip-cards-title">Key Achievements</h2>
+            <p class="flip-cards-subtitle">Hover over each card to discover more about Rizal's remarkable accomplishments</p>
+
+            <div class="flip-cards-grid">
+                <!-- Card 1: Scholar -->
+                <div class="flip-card-wrapper">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <div class="flip-card-front-icon">📚</div>
+                            <h3>Scholar</h3>
+                            <p>Polymath Extraordinaire</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Scholar</h3>
+                            <p>Fluent in 22 languages. Master of medicine, philosophy, law, and literature. His intellectual prowess shaped the consciousness of a nation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Artist -->
+                <div class="flip-card-wrapper">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <div class="flip-card-front-icon">🎨</div>
+                            <h3>Artist</h3>
+                            <p>Sculptor, Painter & Designer</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Artist</h3>
+                            <p>Renowned for sculptures like "The Triumph of Science over Death." His art combined beauty with revolutionary ideals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Scientist -->
+                <div class="flip-card-wrapper">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <div class="flip-card-front-icon">🔬</div>
+                            <h3>Scientist</h3>
+                            <p>Naturalist & Researcher</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Scientist</h3>
+                            <p>Discovered new species. Draco rizali (flying lizard) and Apogonia rizali (beetle) honor his scientific contributions to natural history.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4: Warrior -->
+                <div class="flip-card-wrapper">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <div class="flip-card-front-icon">⚔️</div>
+                            <h3>Warrior</h3>
+                            <p>Master of Martial Arts</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Warrior</h3>
+                            <p>Expert swordsman, fencer, wrestler, and judoka. Trained in Arnis and Western combat. "Brain and Brawn" personified.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5: Physician -->
+                <div class="flip-card-wrapper">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <div class="flip-card-front-icon">⚕️</div>
+                            <h3>Physician</h3>
+                            <p>Doctor & Healer</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Physician</h3>
+                            <p>Ophthalmologist who restored his mother's sight. Provided medical care to the poor of Dapitan. Medicine with compassion.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6: Writer -->
+                <div class="flip-card-wrapper">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <div class="flip-card-front-icon">✍️</div>
+                            <h3>Writer</h3>
+                            <p>Novelist & Propagandist</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Writer</h3>
+                            <p>Noli Me Tangere and El Filibusterismo ignited revolution. His pen wielded more power than any weapon.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: Educator -->
+                <div class="flip-card-wrapper">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <div class="flip-card-front-icon">🏫</div>
+                            <h3>Educator</h3>
+                            <p>Teacher & Reformer</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Educator</h3>
+                            <p>Opened schools in Dapitan for boys. Believed education was the pathway to national progress and freedom.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8: Revolutionary -->
+                <div class="flip-card-wrapper">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <div class="flip-card-front-icon">🔥</div>
+                            <h3>Revolutionary</h3>
+                            <p>Champion of Freedom</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>Revolutionary</h3>
+                            <p>His execution sparked the Philippine Revolution. One man's sacrifice became a nation's awakening. Immortal through his ideals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>A digital archive dedicated to José Rizal's life, works, and enduring legacy</p>
+        <p>© 2024 José Rizal Digital Collection | All Rights Reserved</p>
+        <p style="font-size: 0.85rem; margin-top: 20px;">Preserving the memory of a hero, inspiring future leaders</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Scroll animation for biography sections
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const bioText = entry.target.querySelector('.bio-text-fade');
+                    const bioImage = entry.target.querySelector('.bio-image-fade');
+
+                    if (bioText) {
+                        setTimeout(() => {
+                            bioText.style.opacity = '1';
+                        }, 0);
+                    }
+
+                    if (bioImage) {
+                        setTimeout(() => {
+                            bioImage.style.opacity = '1';
+                        }, 200);
+                    }
+
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all bio blocks
+        document.querySelectorAll('.bio-block').forEach(block => {
+            observer.observe(block);
+        });
+    </script>
+</body>
+</html>

@@ -9,93 +9,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="styles/index-styles.css">
+		<link rel="stylesheet" href="styles/man-styles.css">
 
     <!-- jQuery CDN -->
     <!-- jQuery CDN without integrity (simplest fix) -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    
-  <style>
-    /* Make carousel controls circular and center them vertically for better UI */
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 40px;
-        height: 40px;
-        background-color: rgba(0,0,0,0.5);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
-        /* UI Fixes for centering */
-        position: absolute;
-        top: 50%;
-        /* Pulls the control back up by half its height to perfectly center it */
-        transform: translateY(-50%); 
-    }
-    .carousel-control-prev {
-        /* Adjust this value to position the control outside/near the card's edge */
-        left: -20px; 
-    }
-    .carousel-control-next {
-        /* Adjust this value to position the control outside/near the card's edge */
-        right: -20px;
-    }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-size: 50% 50%;
-    }
-
-    .mandate-text p {
-      visibility: hidden; /* Hide paragraphs initially */
-    }
-
-    .mandate-text h2 {
-      visibility: hidden; /* Hide heading initially */
-    }
-
-		.typing-cursor {
-			display: inline-block;
-			width: 2px;
-			background: black;
-			margin-left: 3px;
-			animation: blink 0.7s infinite;
-		}
-
-		@keyframes blink {
-				0% { opacity: 1; }
-				50% { opacity: 0; }
-				100% { opacity: 1; }
-		}
-  </style>
 
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-md">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
         <div class="container-fluid px-3 px-md-5">
-            <!-- Logo / Brand -->
             <a class="navbar-brand" href="index.html">JOSÉ RIZAL</a>
 
-            <!-- Toggler button for mobile -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">HOME</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">THE MAN</a></li>
-                    <li class="nav-item"><a class="nav-link" href="lovers.html">THE HEART</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">THE WORKS</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">HISTORY & LAW</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">LEGACY</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">ACKNOWLEDGEMENTS</a></li>
-                </ul>
+            <!-- Offcanvas menu -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="man.html">THE MAN</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lovers.html">THE HEART</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">THE WORKS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">HISTORY & LAW</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">LEGACY</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">ACKNOWLEDGEMENTS</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
-
+		
     <!-- Hero Section -->
     <section class="hero-section" style="background-image: url(images/rizal-hero-image.jpg); background-size: cover; background-position: center;">
         <div class="scroll-indicator d-none d-md-block">
@@ -103,7 +55,7 @@
         </div>
 
         <div class="hero-content">
-            <div class="hero-label">
+            <div class="hero-label text-white">
                 1861 - 1896
             </div>
             <h1>José Rizal</h1>
@@ -118,188 +70,188 @@
         </div>
     </section>
 
-  <!-- Mandate Section -->
-  <section class="mandate-section">
-      <div class="container-fluid">
-          <div class="mandate-content">
-              <div class="row align-items-center">
-                  <div class="col-lg-6 mb-5 mb-lg-0">
-                      <div class="mandate-text" style="opacity: 1;">
-                          <!-- <h2>Why Study Rizal?</h2> -->
-													 <h2>
-																<span id="typingText"></span>
-																<span class="typing-cursor"></span>
-														</h2>
+		<!-- Mandate Section -->
+		<section class="mandate-section">
+				<div class="container-fluid">
+						<div class="mandate-content">
+								<div class="row align-items-center">
+										<div class="col-lg-6 mb-5 mb-lg-0">
+												<div class="mandate-text" style="opacity: 1;">
+														<!-- <h2>Why Study Rizal?</h2> -->
+														<h2 class="mandate-title" data-text="Why Study Rizal?">
+																	<span id="typingText"></span>
+																	<span class="typing-cursor"></span>
+															</h2>
 
-                          <p>
-                              In 1956, lawmakers passed <span class="mandate-highlight">Republic Act 1425</span> (The Rizal Law) to strengthen Filipino identity. They believed that reading Rizal's works would help young Filipinos understand freedom, nationalism, and the values that shaped our nation.
-                          </p>
-                          <p>
-                              More than six decades later, this mandate remains profoundly relevant. It stands as a testament to the enduring power of intellectual discourse and moral courage in nation-building. Rizal's life exemplifies how one individual's commitment to truth and justice can inspire generations.
-                          </p>
-                          <p style="font-weight: 600; color: #1a1a1a; margin-top: 30px;">
-                              This site is dedicated to that mandate—making Rizal's legacy accessible, engaging, and meaningful for today's generation.
-                          </p>
-                      </div>
-                  </div>
-                  <div class="col-lg-6">
-                      <div class="mandate-image-placeholder">
-                          <img src="images/rizal-statue.jpg" alt="RA 1425 Document" class="img-fluid" style="border-radius: 10px;">
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+														<p class="fact-box">
+																In 1956, lawmakers passed <span class="mandate-highlight">Republic Act 1425</span> (The Rizal Law) to strengthen Filipino identity. They believed that reading Rizal's works would help young Filipinos understand freedom, nationalism, and the values that shaped our nation.
+														</p>
+														<p class="reverse-fact-box">
+																More than six decades later, this mandate remains profoundly relevant. It stands as a testament to the enduring power of intellectual discourse and moral courage in nation-building. Rizal's life exemplifies how one individual's commitment to truth and justice can inspire generations.
+														</p>
+														<p style="font-weight: 600; color: #1a1a1a; margin-top: 30px;" class="fact-box">
+																This site is dedicated to that mandate—making Rizal's legacy accessible, engaging, and meaningful for today's generation.
+														</p>
+												</div>
+										</div>
+										<div class="col-lg-6">
+												<div class="mandate-image-placeholder">
+														<img src="images/rizal-statue.jpg" alt="RA 1425 Document" class="img-fluid" style="border-radius: 10px;">
+												</div>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
+		
+		<!-- Highlights Section -->
+		<section class="highlights-section">
+				<div class="container-fluid px-3 px-md-5">
+						<div class="highlights-intro text-center mb-5 highlights-hero">
+								<h2 class="text-white">Key Moments in Rizal's Life</h2>
+								<p class="text-white">A timeline of pivotal events that shaped his legacy and influence</p>
+						</div>
 
-    <!-- Highlights Section -->
-  <section class="highlights-section">
-      <div class="container-fluid px-3 px-md-5">
-          <div class="highlights-intro text-center mb-5">
-              <h2>Key Moments in Rizal's Life</h2>
-              <p>A timeline of pivotal events that shaped his legacy and influence</p>
-          </div>
+						<div class="row g-4">
+								<!-- 1887 - Noli Me Tangere -->
+								<div class="col-md-6 col-lg-4">
+										<div class="highlight-card visit-style-card">
+												<div class="highlight-card-image">
+														<img src="images/noli-me-tangere.jpg" alt="Publication of Noli Me Tangere">
+												</div>
+												<div class="highlight-year">1887</div>
+												<h3>Publication of Noli Me Tangere</h3>
+												<p>Rizal's debut novel becomes a sensation across the Philippines, sparking conversations about Spanish colonial rule and social reform.</p>
+										</div>
+								</div>
 
-          <div class="row g-4">
-              <!-- 1887 - Noli Me Tangere -->
-              <div class="col-md-6 col-lg-4">
-                  <div class="highlight-card visit-style-card">
-                      <div class="highlight-card-image">
-                          <img src="images/noli-me-tangere.jpg" alt="Publication of Noli Me Tangere">
-                      </div>
-                      <div class="highlight-year">1887</div>
-                      <h3>Publication of Noli Me Tangere</h3>
-                      <p>Rizal's debut novel becomes a sensation across the Philippines, sparking conversations about Spanish colonial rule and social reform.</p>
-                  </div>
-              </div>
+								<!-- 1891 - El Filibusterismo -->
+								<div class="col-md-6 col-lg-4">
+										<div class="highlight-card visit-style-card">
+												<div class="highlight-card-image">
+														<img src="images/el-filibusterimo.jpg" alt="El Filibusterismo Published">
+												</div>
+												<div class="highlight-year">1891</div>
+												<h3>El Filibusterismo Published</h3>
+												<p>The sequel to Noli Me Tangere intensifies the critique of colonialism and accelerates the movement for Philippine independence.</p>
+										</div>
+								</div>
 
-              <!-- 1891 - El Filibusterismo -->
-              <div class="col-md-6 col-lg-4">
-                  <div class="highlight-card visit-style-card">
-                      <div class="highlight-card-image">
-                          <img src="images/el-filibusterimo.jpg" alt="El Filibusterismo Published">
-                      </div>
-                      <div class="highlight-year">1891</div>
-                      <h3>El Filibusterismo Published</h3>
-                      <p>The sequel to Noli Me Tangere intensifies the critique of colonialism and accelerates the movement for Philippine independence.</p>
-                  </div>
-              </div>
+								<!-- 1896 - Execution & Martyrdom -->
+								<div class="col-md-6 col-lg-4">
+										<div class="highlight-card visit-style-card">
+												<div class="highlight-card-image">
+														<img src="images/rizal-execution.jpg" alt="Execution & Martyrdom">
+												</div>
+												<div class="highlight-year">1896</div>
+												<h3>Execution & Martyrdom</h3>
+												<p>Rizal's execution becomes the catalyst for the Philippine Revolution, cementing his place as the nation's supreme hero.</p>
+										</div>
+								</div>
 
-              <!-- 1896 - Execution & Martyrdom -->
-              <div class="col-md-6 col-lg-4">
-                  <div class="highlight-card visit-style-card">
-                      <div class="highlight-card-image">
-                          <img src="images/rizal-execution.jpg" alt="Execution & Martyrdom">
-                      </div>
-                      <div class="highlight-year">1896</div>
-                      <h3>Execution & Martyrdom</h3>
-                      <p>Rizal's execution becomes the catalyst for the Philippine Revolution, cementing his place as the nation's supreme hero.</p>
-                  </div>
-              </div>
+								<!-- 1872-1882 - European Education & Travels -->
+								<div class="col-md-6 col-lg-4">
+										<div class="highlight-card visit-style-card">
+												<div class="highlight-card-image">
+														<img src="images/rizal-travel.jpg" alt="European Education & Travels">
+												</div>
+												<div class="highlight-year">1872 - 1882</div>
+												<h3>European Education & Travels</h3>
+												<p>Rizal studies medicine, languages, and philosophy across Spain, France, Germany, and Belgium, broadening his intellectual horizons.</p>
+										</div>
+								</div>
 
-              <!-- 1872-1882 - European Education & Travels -->
-              <div class="col-md-6 col-lg-4">
-                  <div class="highlight-card visit-style-card">
-                      <div class="highlight-card-image">
-                          <img src="images/rizal-travel.jpg" alt="European Education & Travels">
-                      </div>
-                      <div class="highlight-year">1872 - 1882</div>
-                      <h3>European Education & Travels</h3>
-                      <p>Rizal studies medicine, languages, and philosophy across Spain, France, Germany, and Belgium, broadening his intellectual horizons.</p>
-                  </div>
-              </div>
+								<!-- 1880s-1890s - Romantic Relationships -->
+								<div class="col-md-6 col-lg-4">
+										<div class="highlight-card visit-style-card">
+												<div class="highlight-card-image">
+														<img src="images/rizal-lover.webp" alt="Romantic Relationships Across Continents">
+												</div>
+												<div class="highlight-year">1880s - 1890s</div>
+												<h3>Romantic Relationships Across Continents</h3>
+												<p>Rizal's passionate letters and relationships with various women reveal a deeply human side beyond his intellectual legacy.</p>
+										</div>
+								</div>
 
-              <!-- 1880s-1890s - Romantic Relationships -->
-              <div class="col-md-6 col-lg-4">
-                  <div class="highlight-card visit-style-card">
-                      <div class="highlight-card-image">
-                          <img src="images/rizal-lover.webp" alt="Romantic Relationships Across Continents">
-                      </div>
-                      <div class="highlight-year">1880s - 1890s</div>
-                      <h3>Romantic Relationships Across Continents</h3>
-                      <p>Rizal's passionate letters and relationships with various women reveal a deeply human side beyond his intellectual legacy.</p>
-                  </div>
-              </div>
+								<!-- 1882-1892 - Return to Philippines & Activism -->
+								<div class="col-md-6 col-lg-4">
+										<div class="highlight-card visit-style-card">
+												<div class="highlight-card-image">
+														<img src="images/rizal-activism.jpg" alt="Return to Philippines & Activism">
+												</div>
+												<div class="highlight-year">1882 - 1892</div>
+												<h3>Return to Philippines & Activism</h3>
+												<p>After his European sojourn, Rizal returns home to establish reform movements and further his advocacy for a better nation.</p>
+										</div>
+								</div>
+						</div>
+				</div>
+		</section>
 
-              <!-- 1882-1892 - Return to Philippines & Activism -->
-              <div class="col-md-6 col-lg-4">
-                  <div class="highlight-card visit-style-card">
-                      <div class="highlight-card-image">
-                          <img src="images/rizal-activism.jpg" alt="Return to Philippines & Activism">
-                      </div>
-                      <div class="highlight-year">1882 - 1892</div>
-                      <h3>Return to Philippines & Activism</h3>
-                      <p>After his European sojourn, Rizal returns home to establish reform movements and further his advocacy for a better nation.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </section>
+		<!-- Explore Section -->
+		<section class="explore-section py-5">
+				<div class="container">
+						<div class="text-center mb-5">
+								<h2 class="fw-light">Explore the Site</h2>
+								<p class="text-muted mx-auto" style="max-width: 700px;">
+										Journey through the different facets of Rizal's life, legacy, and influence on the Filipino nation
+								</p>
+						</div>
 
-  <!-- Explore Section -->
-  <section class="explore-section py-5">
-      <div class="container">
-          <div class="text-center mb-5">
-              <h2 class="fw-light">Explore the Site</h2>
-              <p class="text-muted mx-auto" style="max-width: 700px;">
-                  Journey through the different facets of Rizal's life, legacy, and influence on the Filipino nation
-              </p>
-          </div>
+						<div id="exploreCarousel" class="carousel slide" data-bs-ride="carousel">
+								<div class="carousel-inner">
+										<div class="carousel-item active">
+												<div class="d-flex justify-content-start gap-3"> 
+														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+																<img src="images/rizal_love_letter.jpg" class="card-img-top" alt="Love & Correspondence">
+																<div class="card-body text-center">
+																		<h5 class="card-title fw-bold">The Heart</h5>
+																		<p class="card-text text-muted">His romantic life across continents</p>
+																</div>
+														</div>
+														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+																<img src="images/books.jpg" class="card-img-top" alt="Literary Works">
+																<div class="card-body text-center">
+																		<h5 class="card-title fw-bold">The Works</h5>
+																		<p class="card-text text-muted">The writings that awakened a nation</p>
+																</div>
+														</div>
+														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+																<img src="images/laws.jpg" class="card-img-top" alt="History & Law">
+																<div class="card-body text-center">
+																		<h5 class="card-title fw-bold">History & Law</h5>
+																		<p class="card-text text-muted">Why the Church fought the Rizal Law</p>
+																</div>
+														</div>
+														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+																<img src="images/rizal-contributions-statue.jpg" class="card-img-top" alt="Global Impact">
+																<div class="card-body text-center">
+																		<h5 class="card-title fw-bold">Legacy</h5>
+																		<p class="card-text text-muted">How leaders at home and abroad viewed him</p>
+																</div>
+														</div>
+														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+																<img src="images/teammates.jpg" class="card-img-top" alt="Acknowledgements">
+																<div class="card-body text-center">
+																		<h5 class="card-title fw-bold">Acknowledgements</h5>
+																		<p class="card-text text-muted">Special thanks to historians, researchers, and contributors</p>
+																</div>
+														</div>
+												</div>
+										</div>
+								</div>
 
-          <div id="exploreCarousel" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                  <div class="carousel-item active">
-                      <div class="d-flex justify-content-start gap-3"> 
-                          <div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
-                              <img src="images/rizal_love_letter.jpg" class="card-img-top" alt="Love & Correspondence">
-                              <div class="card-body text-center">
-                                  <h5 class="card-title fw-bold">The Heart</h5>
-                                  <p class="card-text text-muted">His romantic life across continents</p>
-                              </div>
-                          </div>
-                          <div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
-                              <img src="images/books.jpg" class="card-img-top" alt="Literary Works">
-                              <div class="card-body text-center">
-                                  <h5 class="card-title fw-bold">The Works</h5>
-                                  <p class="card-text text-muted">The writings that awakened a nation</p>
-                              </div>
-                          </div>
-                          <div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
-                              <img src="images/laws.jpg" class="card-img-top" alt="History & Law">
-                              <div class="card-body text-center">
-                                  <h5 class="card-title fw-bold">History & Law</h5>
-                                  <p class="card-text text-muted">Why the Church fought the Rizal Law</p>
-                              </div>
-                          </div>
-                          <div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
-                              <img src="images/rizal-contributions-statue.jpg" class="card-img-top" alt="Global Impact">
-                              <div class="card-body text-center">
-                                  <h5 class="card-title fw-bold">Legacy</h5>
-                                  <p class="card-text text-muted">How leaders at home and abroad viewed him</p>
-                              </div>
-                          </div>
-                          <div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
-                              <img src="images/teammates.jpg" class="card-img-top" alt="Acknowledgements">
-                              <div class="card-body text-center">
-                                  <h5 class="card-title fw-bold">Acknowledgements</h5>
-                                  <p class="card-text text-muted">Special thanks to historians, researchers, and contributors</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-
-              <button class="carousel-control-prev" type="button">
-                  <span class="carousel-control-prev-icon"></span>
-                  <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button">
-                  <span class="carousel-control-next-icon"></span>
-                  <span class="visually-hidden">Next</span>
-              </button>
-          </div>
-      </div>
-  </section>
+								<button class="carousel-control-prev" type="button">
+										<span class="carousel-control-prev-icon"></span>
+										<span class="visually-hidden">Previous</span>
+								</button>
+								<button class="carousel-control-next" type="button">
+										<span class="carousel-control-next-icon"></span>
+										<span class="visually-hidden">Next</span>
+								</button>
+						</div>
+				</div>
+		</section>
 
   <!-- Footer -->
   <footer>
@@ -367,49 +319,14 @@
 
 <script src="js/index-carousel.js"></script>
 
+<script src="js/animation-mandate.js"></script>
+
 <script>
-$(document).ready(function() {
-    function typeText(element, speed = 50, callback = null) {
-        const $el = $(element);
-        const fullText = $el.text();
-        $el.text(''); // Clear text to start typing
-        $el.css('visibility', 'visible'); // Make element visible
-
-        let i = 0;
-        const typingInterval = setInterval(() => {
-            $el.append(fullText[i]);
-            i++;
-            if (i >= fullText.length) {
-                clearInterval(typingInterval);
-                if (callback) callback(); // Call next animation if any
-            }
-        }, speed);
-    }
-
-    // IntersectionObserver to detect when mandate-section is visible
-    const observerOptions = {
-        threshold: 0.2
-    };
-
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Start typing animation
-                typeText('.mandate-text h2', 50, () => {
-                    $('.mandate-text p').each(function(index, paragraph) {
-                        setTimeout(() => {
-                            typeText(paragraph, 25);
-                        }, index * 500);
-                    });
-                });
-
-                // Stop observing after animation starts
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    const mandateSection = document.querySelector('.mandate-section');
-    if (mandateSection) observer.observe(mandateSection);
+$(document).ready(function () {
+    $('.btn-primary-custom').on('click', function () {
+        $('html, body').animate({
+            scrollTop: $('.mandate-section').offset().top
+        }, 10); // 800ms smooth scroll
+    });
 });
 </script>

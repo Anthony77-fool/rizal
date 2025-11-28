@@ -398,16 +398,3 @@ footer p {
         font-size: 1.5rem;
     }
 }
-
-.nav-link.active {
-        color: #d4a574 !important; /* Keep active color */
-    }
-
-    .nav-link.active::after {
-        width: 100%; /* Keep underline visible */
-    }
-
-    /* Ensure active link color is not overridden by hover on other links */
-    .navbar-nav .nav-link:not(.active):hover::after {
-        width: 100%;
-    }

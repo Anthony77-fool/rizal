@@ -20,59 +20,102 @@
         z-index: 1000;
     }
 
-    .navbar-brand {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #1a1a1a !important;
-        letter-spacing: 1px;
-    }
+		/* Navigation base */
+		nav.navbar {
+				background-color: #fff;
+				border-bottom: 1px solid #e0e0e0;
+				box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+				position: sticky;
+				top: 0;
+				z-index: 1000;
+		}
 
-    .nav-link {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #555 !important;
-    margin: 0 0.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-bottom: 8px;
-    }
+		/* Brand */
+		.navbar-brand {
+				font-size: 1.5rem;
+				font-weight: 700;
+				color: #1a1a1a !important;
+				letter-spacing: 1px;
+		}
 
-    .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background-color: #d4a574;
-        transition: all 0.3s ease;
-        transform: translateX(-50%);
-    }
+		/* Links */
+		.nav-link {
+				font-size: 0.85rem;
+				font-weight: 500;
+				color: #555 !important;
+				margin: 0 0.5rem;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				transition: all 0.3s ease;
+				position: relative;
+				padding-bottom: 8px;
+		}
 
-    /* Hover effect for all links */
-    .nav-link:hover {
-        color: #d4a574 !important;
-    }
+		.nav-link::after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				width: 0;
+				height: 2px;
+				background-color: #d4a574;
+				transition: all 0.3s ease;
+				transform: translateX(-50%);
+		}
 
-    .nav-link:hover::after {
-        width: 100%;
-    }
+		/* Hover effect */
+		.nav-link:hover {
+				color: #d4a574 !important;
+		}
+		.nav-link:hover::after {
+				width: 100%;
+		}
 
-    /* Active state for navbar link */
-    .nav-link.active {
-        color: #d4a574 !important; /* Keep active color */
-    }
+		/* Active link */
+		.nav-link.active {
+				color: #d4a574 !important;
+		}
+		.nav-link.active::after {
+				width: 100%;
+		}
 
-    .nav-link.active::after {
-        width: 100%; /* Keep underline visible */
-    }
+		/* Ensure other links hover doesn't override active underline */
+		.navbar-nav .nav-link:not(.active):hover::after {
+				width: 100%;
+		}
 
-    /* Ensure active link color is not overridden by hover on other links */
-    .navbar-nav .nav-link:not(.active):hover::after {
-        width: 100%;
-    }
+		/* Toggler style */
+		.navbar-toggler {
+				border: none;
+				background-color: transparent;
+				font-size: 1.25rem;
+				color: #1a1a1a;
+		}
+
+		/* Offcanvas customization */
+		.offcanvas {
+				width: 250px; /* slide-in width */
+		}
+		.offcanvas .navbar-nav .nav-link {
+				margin: 0.5rem 0;
+		}
+		.offcanvas-header {
+				border-bottom: 1px solid #e0e0e0;
+		}
+		.offcanvas .btn-close {
+				outline: none;
+		}
+
+		/* Responsive tweaks */
+		@media (max-width: 992px) { /* tablet and below */
+				.navbar-nav {
+						text-align: left;
+				}
+				.nav-item {
+						margin: 0.5rem 0;
+				}
+		}
+
 
     /* Hero Section */
     .hero-section {
@@ -292,7 +335,7 @@
     /* Timeline/Highlights Section */
     .highlights-section {
         background-color: #fff;
-        padding: 80px 20px;
+        padding: 0 20px 80px 20px;
     }
 
     .highlights-intro {
@@ -637,4 +680,123 @@
 /* Text overlay on image */
 .explore-card .position-absolute {
     font-size: 0.9rem;
+}
+
+/* Make carousel controls circular and center them vertically for better UI */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* UI Fixes for centering */
+    position: absolute;
+    top: 50%;
+    /* Pulls the control back up by half its height to perfectly center it */
+    transform: translateY(-50%); 
+}
+.carousel-control-prev {
+    /* Adjust this value to position the control outside/near the card's edge */
+    left: -20px; 
+}
+.carousel-control-next {
+    /* Adjust this value to position the control outside/near the card's edge */
+    right: -20px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 50% 50%;
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2em;
+    background-color: transparent;
+    color: black;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* ensures H2 aligns text and cursor cleanly */
+.mandate-title {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+#typingText {
+    display: inline;
+}
+
+.highlights-hero {
+    position: relative;
+    background-image: url('../images/rizal-hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* optional parallax effect */
+    color: white; /* makes the text visible */
+    padding: 100px 20px; /* space around text */
+    border-radius: 8px; /* optional for styling */
+}
+
+.highlights-hero::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5); /* overlay for readability */
+    z-index: 0;
+    border-radius: 8px;
+}
+
+.highlights-hero h2,
+.highlights-hero p {
+    position: relative;
+    z-index: 1; /* text sits above overlay */
+}
+
+.highlights-intro.highlights-hero {
+    width: 100vw;           /* full viewport width */
+    margin-left: calc(-50vw + 50%); /* counter container centering */
+    padding: 80px 0;  /* remove container padding */
+    border-radius: 0;       /* remove rounding if any */
+}
+
+/* Timeline/Key Facts */
+.reverse-fact-box {
+    background: #fff;
+    border-right: 4px solid #d4a574; /* moved from left → right */
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.reverse-fact-box h4 {
+    color: #d4a574;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.reverse-fact-box p {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 0;
 }
