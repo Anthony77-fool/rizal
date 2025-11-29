@@ -202,41 +202,61 @@
 								<div class="carousel-inner">
 										<div class="carousel-item active">
 												<div class="d-flex justify-content-start gap-3"> 
-														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+
+														<!-- Man Card -->
+														<div id="gotoMan" class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+																<img src="images/man-card-img.jpg" class="card-img-top" alt="Rizal as a Young Man">
+																<div class="card-body text-center">
+																		<h5 class="card-title fw-bold">The Man</h5>
+																		<p class="card-text text-muted">His early life, education, and personal values that shaped a national hero</p>
+																</div>
+														</div>
+
+														<!-- The Heart Card -->
+														<div id="gotoHeart" class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
 																<img src="images/rizal_love_letter.jpg" class="card-img-top" alt="Love & Correspondence">
 																<div class="card-body text-center">
 																		<h5 class="card-title fw-bold">The Heart</h5>
 																		<p class="card-text text-muted">His romantic life across continents</p>
 																</div>
 														</div>
-														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+														
+														<!-- The Works Card -->
+														<div id="gotoWorks" class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
 																<img src="images/books.jpg" class="card-img-top" alt="Literary Works">
 																<div class="card-body text-center">
 																		<h5 class="card-title fw-bold">The Works</h5>
 																		<p class="card-text text-muted">The writings that awakened a nation</p>
 																</div>
 														</div>
-														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+
+														<!-- History & Law Card -->
+														<div id="gotoHistoryAndLaw" class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
 																<img src="images/laws.jpg" class="card-img-top" alt="History & Law">
 																<div class="card-body text-center">
 																		<h5 class="card-title fw-bold">History & Law</h5>
 																		<p class="card-text text-muted">Why the Church fought the Rizal Law</p>
 																</div>
 														</div>
-														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+
+														<!-- Legacy Card -->
+														<div id="gotoLegacy" class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
 																<img src="images/rizal-contributions-statue.jpg" class="card-img-top" alt="Global Impact">
 																<div class="card-body text-center">
 																		<h5 class="card-title fw-bold">Legacy</h5>
 																		<p class="card-text text-muted">How leaders at home and abroad viewed him</p>
 																</div>
 														</div>
-														<div class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
+
+														<!-- Acknowledgements Card -->
+														<div id="gotoAcknowledgements" class="card border-0 shadow-sm explore-card" style="min-width: 250px;">
 																<img src="images/teammates.jpg" class="card-img-top" alt="Acknowledgements">
 																<div class="card-body text-center">
 																		<h5 class="card-title fw-bold">Acknowledgements</h5>
 																		<p class="card-text text-muted">Special thanks to historians, researchers, and contributors</p>
 																</div>
 														</div>
+
 												</div>
 										</div>
 								</div>
@@ -329,4 +349,39 @@ $(document).ready(function () {
         }, 10); // 800ms smooth scroll
     });
 });
+
+$(document).ready(function () {
+      
+	// The Man
+	$("#gotoMan").click(function () {
+			window.location.href = "man.html";
+	});
+
+	// The Heart
+	$("#gotoHeart").click(function () {
+			window.location.href = "lovers.html";
+	});
+
+	// The Works
+	$("#gotoWorks").click(function () {
+			window.location.href = "works.html";
+	});
+
+	// History & Law
+	$("#gotoHistoryAndLaw").click(function () {
+			window.location.href = "history_and_laws.html";
+	});
+
+	// Legacy
+	$("#gotoLegacy").click(function () {
+			window.location.href = "legacy.html";
+	});
+
+	// Acknowledgements
+	$("#gotoAcknowledgements").click(function () {
+			window.location.href = "acknowledgements.html";
+	});
+
+});
+
 </script>

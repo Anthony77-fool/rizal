@@ -395,6 +395,7 @@ nav {
   padding: 80px 20px;
   background-color: #fff;
 }
+
 .law-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -402,58 +403,59 @@ nav {
   transform: translateY(40px);
   transition: all 0.8s ease-out;
 }
+
 .law-container.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 .law-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 28px;
   align-items: start;
 }
+
 .law-illustrations {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
 }
+
+/* Law image block setup */
 .law-image-block {
   position: relative;
+  width: 100%;
+  height: 200px; /* fixed height for full display */
   background: linear-gradient(135deg, #f3ede6, #f7f2ec);
-  border: 1px solid #e8e8e8;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(0,0,0,0.06);
 }
 
-/* FIXED HEIGHT — no extra padding */
-.law-image-block .card-image-placeholder {
-  height: 180px; /* adjust size you want */
-}
-
-/* Make the actual image match exactly */
-.law-image-block .card-image,
-.law-image-block .card-image-placeholder img {
-  width: 100%;
-  min-height: 220px;
-  object-fit: cover;
-}
-
-/* Hover zoom */
+/* Actual image fills block fully */
 .law-image-block .card-image {
-  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.5s ease, opacity 0.4s ease;
 }
 
+/* Optional: hover zoom */
 .law-image-block:hover .card-image {
   transform: scale(1.06);
 }
 
+/* Law points */
 .law-points {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
 }
+
 .law-point {
   background: #f9f9f9;
   border-left: 4px solid #d4a574;
@@ -463,15 +465,18 @@ nav {
   opacity: 0;
   transform: translateY(20px);
 }
+
 .law-point.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 .law-point:hover {
   background: #fff6ee;
   transform: translateX(4px);
   box-shadow: 0 6px 16px rgba(212,165,116,0.18);
 }
+
 .law-point h4 {
   color: #1a1a1a;
   font-size: 1.05rem;
@@ -480,7 +485,10 @@ nav {
   align-items: center;
   gap: 10px;
 }
-.law-point i { color: #d4a574; }
+
+.law-point i {
+  color: #d4a574;
+}
 
 /* Timeline */
 .timeline {
@@ -570,4 +578,8 @@ footer p { margin: 10px 0; }
 /* Mobile */
 @media (max-width: 640px) {
   .timeline-items { grid-template-columns: 1fr; }
+}
+
+.i-color{
+  color: #d4a574;
 }

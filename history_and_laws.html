@@ -10,6 +10,8 @@
   <link rel="stylesheet" href="styles/index-styles.css">
   <link rel="stylesheet" href="styles/history_and_laws-styles.css">
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
 </head>
 <body>
   <!-- Navigation -->
@@ -107,7 +109,7 @@
         <article class="pyramid-card">
           <div class="card-image-wrapper" data-role="zoom" data-title="Peninsulares — Spanish officials">
             <span class="card-badge">Peninsulares</span>
-            <img class="card-image" src="" alt="Peninsulares officials" />
+            <img class="card-image" src="images/history_and_laws/peninsulares.webp" alt="Peninsulares officials" />
             <div class="card-image-placeholder">
               <img src="images/history_and_laws/peninsulares.webp" alt="Rizal's Love Letters" 
 							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
@@ -129,7 +131,7 @@
         <article class="pyramid-card">
           <div class="card-image-wrapper" data-role="zoom" data-title="Insulares — colonial families">
             <span class="card-badge">Insulares</span>
-            <img class="card-image" src="" alt="Insulares colonial families" />
+            <img class="card-image" src="images/history_and_laws/insulares.avif" alt="Insulares colonial families" />
             <div class="card-image-placeholder">
               <img src="images/history_and_laws/insulares.avif" alt="Insulares" 
 							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
@@ -151,7 +153,7 @@
         <article class="pyramid-card">
           <div class="card-image-wrapper" data-role="zoom" data-title="Mestizos — merchants & students">
             <span class="card-badge">Mestizos</span>
-            <img class="card-image" src="" alt="Mestizos merchants and students" />
+            <img class="card-image" src="images/history_and_laws/mestizos.jpg" alt="Mestizos merchants and students" />
             <div class="card-image-placeholder">
               <img src="images/history_and_laws/mestizos.jpg" alt="Mestizos Merchants" 
 							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
@@ -173,7 +175,7 @@
         <article class="pyramid-card">
           <div class="card-image-wrapper" data-role="zoom" data-title="Indios — native Filipinos">
             <span class="card-badge">Indios</span>
-            <img class="card-image" src="" alt="Indios native Filipinos farmers and townsfolk" />
+            <img class="card-image" src="images/history_and_laws/indios.webp" alt="Indios native Filipinos farmers and townsfolk" />
             <div class="card-image-placeholder">
               <img src="images/history_and_laws/indios.webp" alt="Mestizos Merchants" 
 							style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
@@ -281,7 +283,7 @@
       <div class="modal-content" style="border-radius: 14px;">
         <div class="modal-header">
           <h5 class="modal-title" id="imageModalLabel">Preview</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <i class="bi bi-x-square-fill fs-3 i-color" type="button" data-bs-dismiss="modal"></i>
         </div>
         <div class="modal-body">
           <img id="modalImage" class="modal-image" src="" alt="Preview" />
@@ -298,13 +300,20 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
   <script>
     // Smooth scroll from hero button
-    document.querySelector('.btn-primary-custom').addEventListener('click', function(e) {
-      if (this.parentElement.getAttribute('href') === '#pyramid') {
-        e.preventDefault();
-        document.querySelector('#pyramid').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+    document.querySelectorAll('.btn-primary-custom').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const href = this.parentElement.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }
+      });
     });
 
     // Intersection Observer for sections and items
@@ -318,17 +327,16 @@
       });
     }, observerOptions);
 
-    // Observe pyramid container and law container
-    document.querySelectorAll('.pyramid-container, .law-container').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.pyramid-container, .law-container').forEach(el => observer.observe(el));
 
-    // Stagger rows in triangle
-    const triRows = ['#tri-row-1', '#tri-row-2', '#tri-row-3', '#tri-row-4'].map(sel => document.querySelector(sel));
+    // Staggered reveal for triangle rows
+    const triRows = ['#tri-row-1', '#tri-row-2', '#tri-row-3', '#tri-row-4']
+      .map(sel => document.querySelector(sel));
     const triObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const row = entry.target;
-          row.classList.add('visible');
-          triObserver.unobserve(row);
+          entry.target.classList.add('visible');
+          triObserver.unobserve(entry.target);
         }
       });
     }, { threshold: 0.2 });
@@ -375,7 +383,7 @@
     }, { threshold: 0.2 });
     timelineItems.forEach(item => timelineObserver.observe(item));
 
-    // Lightbox modal on click for any [data-role="zoom"] wrapper
+    // Lightbox modal for [data-role="zoom"]
     const zoomBlocks = document.querySelectorAll('[data-role="zoom"]');
     const modal = new bootstrap.Modal(document.getElementById('imageModal'));
     const modalImage = document.getElementById('modalImage');
@@ -385,16 +393,20 @@
       block.addEventListener('click', () => {
         const img = block.querySelector('.card-image');
         const title = block.getAttribute('data-title') || 'Preview';
+
+        modalTitle.textContent = title;
+
         if (img && img.getAttribute('src')) {
           modalImage.src = img.getAttribute('src');
-          modalTitle.textContent = title;
+          modalImage.style.width = '100%';
+          modalImage.style.height = '100%';
+          modalImage.style.objectFit = 'contain';
+          modalImage.style.display = 'block';
           modal.show();
         } else {
-          // No image yet: show placeholder message
-          modalImage.src = '';
-          modalTitle.textContent = 'No image yet';
           const body = document.querySelector('#imageModal .modal-body');
-          body.innerHTML = '<div style="padding:14px;color:#555;">Add an image source to this block to preview. Placeholder suggests: ' + title + '.</div>';
+          body.innerHTML = `<div style="padding:14px;color:#555;">No image found. Placeholder suggests: ${title}</div>`;
+          modalImage.src = '';
           modal.show();
           setTimeout(() => {
             body.innerHTML = '<img id="modalImage" class="modal-image" src="" alt="Preview" />';
@@ -403,28 +415,23 @@
       });
     });
 
-    // Optional: lightweight parallax on hover for image blocks
+    // Parallax hover effect for image blocks
     function parallaxHover(el) {
       el.addEventListener('mousemove', (e) => {
         const rect = el.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
         const img = el.querySelector('.card-image');
-        if (img) {
-          img.style.transform = `scale(1.08) translate(${x * 8}px, ${y * 8}px)`;
-        }
+        if (img) img.style.transform = `scale(1.08) translate(${x * 8}px, ${y * 8}px)`;
       });
       el.addEventListener('mouseleave', () => {
         const img = el.querySelector('.card-image');
-        if (img) {
-          img.style.transform = 'scale(1.05) translate(0,0)';
-        }
+        if (img) img.style.transform = 'scale(1.05) translate(0,0)';
       });
     }
     document.querySelectorAll('.card-image-wrapper, .law-image-block').forEach(block => parallaxHover(block));
 
-    // Helper: lazy flag for when you add actual images later
-    // Set data-src on .card-image, then call this to swap when visible
+    // Lazy load images
     const lazyImages = document.querySelectorAll('.card-image');
     const lazyObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -438,5 +445,6 @@
     }, { threshold: 0.1 });
     lazyImages.forEach(img => lazyObserver.observe(img));
   </script>
+
 </body>
 </html>
