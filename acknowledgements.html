@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>THE TEAM — Rizal Project</title>
+
+  <!-- Bootstrap + Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="styles/index-styles.css">
+  <link rel="stylesheet" href="styles/acknowledgements-styles.css" />
+
+</head>
+<body>
+
+  <!-- Navigation (user-provided) -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container-fluid px-3 px-md-5">
+      <a class="navbar-brand" href="index.html">JOSÉ RIZAL</a>
+
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Offcanvas menu -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="man.html">THE MAN</a></li>
+            <li class="nav-item"><a class="nav-link" href="lovers.html">THE HEART</a></li>
+            <li class="nav-item"><a class="nav-link" href="works.html">THE WORKS</a></li>
+            <li class="nav-item"><a class="nav-link" href="history_and_laws.html">HISTORY & LAW</a></li>
+            <li class="nav-item"><a class="nav-link" href="legacy.html">LEGACY</a></li>
+            <li class="nav-item"><a class="nav-link active" href="acknowledgements.html">ACKNOWLEDGEMENTS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="background-image: url('images/acknowledgements/acknowledgement-hero-bg.jpg'); background-size: cover; background-position: center;">
+      <div class="scroll-indicator d-none d-md-block">
+          <i class="fas fa-chevron-down"></i>
+      </div>
+
+      <div class="hero-content">
+          <div class="hero-label">
+              Acknowledge Them!
+          </div>
+          <h1>THE TEAM</h1>
+          <h2>The minds behind the project</h2>
+          <p class="hero-description">
+              A small, dedicated group of researchers, designers, and educators who shaped this Rizal educational collection — presented with the restraint and respect of a museum exhibition.
+          </p>
+          <a href="#main" style="text-decoration: none;">
+              <button class="btn-primary-custom">
+                  Discover Their Contributions
+                  <i class="fas fa-arrow-right"></i>
+              </button>
+          </a>
+      </div>
+  </section>
+
+  <main class="section" id="main" role="main" aria-labelledby="members-title">
+    <h3 id="members-title" style="text-align:center; font-weight:300; font-size:1.6rem; margin-bottom:8px;">Core Team & Contributors</h3>
+    <p style="text-align:center; color:var(--muted); margin-bottom:28px; font-weight:300;">Leader, developer, and contributors (arranged Firstname Lastname)</p>
+
+    <!-- Leader & Developer -->
+    <div class="leader-card reveal" id="leaderCard" tabindex="0" aria-label="Leader and Developer">
+      <div class="leader-avatar" aria-hidden="true">
+        <img src="images/acknowledgements/Sabado-Marck-Anthony.png" alt="Marck Anthony Sabado portrait placeholder" />
+      </div>
+      <div class="leader-meta">
+        <div class="leader-name stagger">Marck Anthony Sabado</div>
+        <div class="leader-role stagger">Leader & Developer</div>
+        <div class="leader-note stagger">Project lead and primary developer coordinating research, design, and implementation.</div>
+      </div>
+    </div>
+
+    <!-- Team Grid (18 members + Jared Mina added) -->
+    <div class="team-grid" id="teamGrid">
+      <!-- 1 -->
+       <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Manzanillo.jpg" alt="Mark Angel Fernandez Manzanillo portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Mark Angel Manzanillo</div>
+          <div class="team-role stagger">Contributor</div>
+          <div class="team-blurb stagger">Research and content support.</div>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/miguel.jpg" alt="Mike Jann Miguel Cuaresma portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Mike Jann Cuaresma</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Sakira.jpg" alt="Sakira Bacong Julian portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Sakira Julian</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 4 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Daryll.jpeg" alt="Daryll Pascua Juni portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Daryll Juni</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 5 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/mamba.jpg" alt="Cristine Mae Oaquera Mamba portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Cristine Mae Mamba</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 6 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Dion.jpg" alt="Dion Begonia Mangrubang portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Dion Mangrubang</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 7 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/miguel.jpg" alt="Christine Kaye Maganda Miguel portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Christine Kaye Miguel</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 8 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Molina.jpg" alt="James Dyniel B. Molina portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">James Dyniel Molina</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 9 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Dianna.jpg" alt="Dianna Mae De Leon Paguigiran portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Dianna Mae Paguigiran</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 10 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/norine.jpg" alt="Norine Cael Yasay Rabor portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Norine Cael Rabor</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 11 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/aljon.jpg" alt="Aljon Geronimo Rivera portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Aljon Rivera</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 12 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Samelin.jpeg" alt="James Mikel Carbonell Samelin portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">James Mikel Samelin</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 13 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Segundo.jpg" alt="Mack Jaryll Bacud Segundo portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Mack Jaryll Segundo</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 14 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Achi_.jpg" alt="Achiles Louiggie Cariaga Sotelo portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Achiles Louiggie Sotelo</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 15 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/eldrich.jfif" alt="Raven Eldrich Javier Sumaoang portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Raven Eldrich Sumaoang</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 16 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/tacata.png" alt="Junaxstone Tyler Torralba Tacata portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Junaxstone Tyler Tacata</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 17 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Niko.jpg" alt="John Nikolai Dahilig Tacotaco portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">John Nikolai Tacotaco</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- 18 -->
+      <article class="team-card reveal" tabindex="0">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/Vidad.jpg" alt="Rhea Danica Lagansua Vidad portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Rhea Danica Vidad</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+
+      <!-- Jared Mina (added) -->
+      <article class="team-card reveal" tabindex="0" aria-label="Jared Mina">
+        <div class="team-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/mina.jpg" alt="Jared Mina portrait placeholder" />
+        </div>
+        <div class="team-meta">
+          <div class="team-name stagger">Jared Mina</div>
+          <div class="team-role stagger">Team Member</div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Adviser Section -->
+    <div class="adviser-wrap">
+      <div class="adviser-card reveal" role="region" aria-label="Project Adviser" tabindex="0">
+        <div class="adviser-avatar" aria-hidden="true">
+          <img src="images/acknowledgements/adviser.jpg" alt="Adviser portrait placeholder" />
+        </div>
+        <div class="adviser-meta">
+          <div class="adviser-name stagger">Ma’am Bernadette Macadaeg</div>
+          <div class="adviser-note stagger">Project Adviser — "Thank you to the team and to the communities who shared their stories and sources."</div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+      <p>A digital archive dedicated to José Rizal's life, works, and enduring legacy</p>
+      <p>© 2024 José Rizal Digital Collection | All Rights Reserved</p>
+      <p style="font-size: 0.85rem; margin-top: 20px;">Developed with respect for history and commitment to education</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Reveal-on-scroll script (gentle stagger) -->
+  <script>
+    (function(){
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function initReveal(selector) {
+        const els = Array.from(document.querySelectorAll(selector));
+        if (!els.length) return;
+        if (prefersReduced) {
+          els.forEach(el => el.classList.add('revealed'));
+          return;
+        }
+        const observer = new IntersectionObserver((entries, obs) => {
+          const visible = entries.filter(e => e.isIntersecting).sort((a,b) => a.target.getBoundingClientRect().top - b.target.getBoundingClientRect().top);
+          visible.forEach((entry, idx) => {
+            const el = entry.target;
+            const delay = Math.min(180 + idx * 70, 520);
+            el.style.transitionDelay = delay + 'ms';
+            el.classList.add('revealed');
+            const children = el.querySelectorAll('.stagger');
+            children.forEach((c, i) => c.style.transitionDelay = (delay + 60 + i * 40) + 'ms');
+            obs.unobserve(el);
+          });
+        }, { root:null, rootMargin:'0px 0px -80px 0px', threshold: 0.12 });
+        els.forEach(el => observer.observe(el));
+      }
+
+      // Initialize reveals
+      initReveal('.reveal');
+
+      // Keyboard focus accessibility
+      document.addEventListener('keydown', (e) => { if (e.key === 'Tab') document.body.classList.add('keyboard-nav'); });
+
+    })();
+  </script>
+</body>
+</html>

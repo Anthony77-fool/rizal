@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Legacy — Rizal in the Eyes of Heroes</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="styles/index-styles.css">
+  <link rel="stylesheet" href="styles/legacy-styles.css">
+
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <div class="container-fluid px-3 px-md-5">
+      <a class="navbar-brand" href="index.html">JOSÉ RIZAL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+            <li class="nav-item"><a class="nav-link" href="man.html">THE MAN</a></li>
+            <li class="nav-item"><a class="nav-link" href="lovers.html">THE HEART</a></li>
+            <li class="nav-item"><a class="nav-link" href="works.html">THE WORKS</a></li>
+            <li class="nav-item"><a class="nav-link" href="history_and_laws.html">HISTORY & LAW</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">LEGACY</a></li>
+            <li class="nav-item"><a class="nav-link" href="ack.html">ACKNOWLEDGEMENTS</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" style="background-image: url('images/legacy/legacy-hero-bg.jpg'); 
+            background-size: cover; 
+            background-position: center;" aria-labelledby="hero-title">
+
+    <div class="hero-content" id="heroBlock">
+      <div class="hero-label">Rizal in the Eyes of Heroes</div>
+      <h1 id="hero-title">Legacy</h1>
+      <h2>PAGE 3 — Rizal in the Eyes of Heroes</h2>
+      <p>Explore how revolutionaries and world leaders saw Rizal, and why his life became a national symbol. Click portraits to expand short bios, use the timeline to trace influence, and test your knowledge with a quick quiz.</p>
+      <div style="margin-top:14px;">
+        <a href="#legacy-cards"><button class="btn-primary-custom">See the Legacy <i class="fas fa-arrow-right" style="margin-left:8px"></i></button></a>
+        <button class="glossary-btn text-white" id="openGlossary" style="margin-left:12px;">Glossary & Quick Facts</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Grouped cards -->
+  <section class="group-section" id="legacy-cards" aria-labelledby="legacy-title">
+    <h2 class="section-title" id="legacy-title">Legacy — Three Perspectives</h2>
+    <p class="section-subtitle">Filipino Revolutionaries • Asian & World Leaders • Why Rizal Became National Hero</p>
+
+    <div class="group-container" id="groupContainer">
+      <div class="group-row">
+
+        <!-- Card 1: Filipino Revolutionaries -->
+        <article class="group-card" data-category="revolutionaries" tabindex="0">
+          <div class="card-image-wrapper" data-role="zoom" data-title="Filipino revolutionaries">
+            <span class="card-badge">Revolutionaries</span>
+            <img class="card-image" data-src="" alt="Filipino revolutionaries" />
+            <div class="card-placeholder">
+              <div class="card-image-placeholder">
+                <img src="images/legacy/kkk.jpg" alt="Rizal's Love Letters" 
+							  style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+              </div>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview</div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-title"><i class="fas fa-fist-raised" style="color:#d4a574"></i> Filipino Revolutionaries</div>
+            <div class="mini-divider"></div>
+
+            <div class="item">
+              <i class="fas fa-key"></i>
+              <div>
+                <p><strong>Bonifacio:</strong> Used “Rizal” as a Katipunan password; translated <em>Mi Último Adiós</em>.</p>
+                <button class="btn btn-sm btn-link p-0" data-bio="bonifacio">Read short bio</button>
+                <div id="bio-bonifacio" class="bio" aria-hidden="true">
+                  <strong>Andrés Bonifacio</strong> (1863–1897) led the Katipunan. He admired Rizal’s courage and used his name as a secret password to inspire unity. Bonifacio translated Rizal’s farewell poem to honor his sacrifice.
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <i class="fas fa-book"></i>
+              <div>
+                <p><strong>Jacinto:</strong> Kartilya reflected Rizal’s emphasis on character and education.</p>
+                <button class="btn btn-sm btn-link p-0" data-bio="jacinto">Read short bio</button>
+                <div id="bio-jacinto" class="bio" aria-hidden="true">
+                  <strong>Emilio Jacinto</strong> (1875–1899) authored the Kartilya ng Katipunan, a moral guide for members. He echoed Rizal’s belief that education and character form the foundation of a free nation.
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <i class="fas fa-brain"></i>
+              <div>
+                <p><strong>Mabini:</strong> Admired Rizal’s intellectual discipline.</p>
+                <button class="btn btn-sm btn-link p-0" data-bio="mabini">Read short bio</button>
+                <div id="bio-mabini" class="bio" aria-hidden="true">
+                  <strong>Apolinario Mabini</strong> (1864–1903) was a thinker and statesman who valued Rizal’s reasoned critique of colonial rule and his disciplined approach to reform.
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <i class="fas fa-microscope"></i>
+              <div>
+                <p><strong>Antonio Luna:</strong> Respected Rizal’s scientific mind and integrity.</p>
+                <button class="btn btn-sm btn-link p-0" data-bio="luna">Read short bio</button>
+                <div id="bio-luna" class="bio" aria-hidden="true">
+                  <strong>Antonio Luna</strong> (1866–1899) was a military leader and scientist who admired Rizal’s rationalism and moral courage.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Card 2: Asian & World Leaders -->
+        <article class="group-card" data-category="asian" tabindex="0">
+          <div class="card-image-wrapper" data-role="zoom" data-title="Asian & world leaders influenced by Rizal">
+            <span class="card-badge">Asian Leaders</span>
+            <img class="card-image" data-src="" alt="Asian and world leaders" />
+            <div class="card-placeholder">
+              <div class="card-image-placeholder">
+                <img src="images/legacy/Mahatma-Gandhi.webp" alt="Rizal's Love Letters" 
+							  style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+              </div>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview</div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-title"><i class="fas fa-globe-asia" style="color:#d4a574"></i> Asian & World Leaders</div>
+            <div class="mini-divider"></div>
+
+            <div class="item">
+              <i class="fas fa-certificate"></i>
+              <p><strong>Anwar Ibrahim:</strong> Called Rizal the “Great Malayan.”</p>
+            </div>
+
+            <div class="item">
+              <i class="fas fa-dove"></i>
+              <p><strong>Mahatma Gandhi:</strong> Saw Rizal as a model of non-violent conviction.</p>
+            </div>
+
+            <div class="item">
+              <i class="fas fa-hand-holding-heart"></i>
+              <p><strong>Sun Yat-sen:</strong> Part of early Asian reformists influenced by Rizal’s ideals.</p>
+            </div>
+
+            <div style="margin-top:10px;">
+              <button class="btn btn-outline-secondary btn-sm" id="moreLeadersBtn">More context</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3: Why Rizal Became National Hero -->
+        <article class="group-card" data-category="hero" tabindex="0">
+          <div class="card-image-wrapper" data-role="zoom" data-title="Why Rizal became National Hero">
+            <span class="card-badge">National Hero</span>
+            <img class="card-image" data-src="" alt="Why Rizal became National Hero" />
+            <div class="card-placeholder">
+              <div class="card-image-placeholder">
+                <img src="images/legacy/monument-rizal.jpg" alt="Rizal's Love Letters" 
+							  style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+              </div>
+            </div>
+            <div class="card-overlay"></div>
+            <div class="tooltip">Click to preview</div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-title"><i class="fas fa-star" style="color:#d4a574"></i> Why He Became the National Hero</div>
+            <div class="mini-divider"></div>
+
+            <div class="item">
+              <i class="fas fa-calendar-check"></i>
+              <p><strong>Declared day of mourning (1898):</strong> Aguinaldo declared mourning after Rizal’s execution, signaling national grief and recognition.</p>
+            </div>
+
+            <div class="item">
+              <i class="fas fa-comments"></i>
+              <p><strong>American era framing:</strong> The American colonial government favored Rizal’s reformist, non-violent image for nation-building narratives.</p>
+            </div>
+
+            <div class="item">
+              <i class="fas fa-scroll"></i>
+              <p><strong>No formal law:</strong> There is no single law naming him "National Hero"; the title endures by tradition, education, and collective respect.</p>
+            </div>
+
+            <div style="margin-top:12px;">
+              <button class="btn btn-outline-secondary btn-sm" id="sourcesBtn">Primary sources & classroom notes</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="timeline-section" aria-labelledby="timeline-title">
+    <h2 class="section-title" id="timeline-title">Timeline — Key Milestones</h2>
+    <p class="section-subtitle">Tap items to reveal short context and suggested classroom activities</p>
+
+    <div class="timeline" id="timeline">
+      <div class="timeline-row" id="timelineRow">
+        <div class="timeline-item" data-activity="Discuss Noli themes" tabindex="0">
+          <div class="year">1887</div>
+          <div>Noli Me Tangere published</div>
+          <small class="text-muted">Suggested activity: small-group character mapping</small>
+        </div>
+
+        <div class="timeline-item" data-activity="Compare Noli & Fili" tabindex="0">
+          <div class="year">1891</div>
+          <div>El Filibusterismo published</div>
+          <small class="text-muted">Suggested activity: debate on reform vs revolution</small>
+        </div>
+
+        <div class="timeline-item" data-activity="Study RA 1425" tabindex="0">
+          <div class="year">1956</div>
+          <div>Rizal Law enacted (RA 1425)</div>
+          <small class="text-muted">Suggested activity: classroom reflection on civic education</small>
+        </div>
+
+        <div class="timeline-item" data-activity="Legacy reflection" tabindex="0">
+          <div class="year">Present</div>
+          <div>Rizal's influence across Asia</div>
+          <small class="text-muted">Suggested activity: research short presentations</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz -->
+  <section class="quiz-section" aria-labelledby="quiz-title">
+    <h2 class="section-title" id="quiz-title">Quick Quiz — Test Your Knowledge</h2>
+    <div class="quiz-card" id="quizCard">
+      <div class="quiz-question" id="quizQuestion">Which leader used "Rizal" as a Katipunan password?</div>
+      <div class="quiz-options" id="quizOptions">
+        <div class="quiz-option" data-correct="false" tabindex="0">Emilio Jacinto</div>
+        <div class="quiz-option" data-correct="true" tabindex="0">Andrés Bonifacio</div>
+        <div class="quiz-option" data-correct="false" tabindex="0">Apolinario Mabini</div>
+        <div class="quiz-option" data-correct="false" tabindex="0">Antonio Luna</div>
+      </div>
+
+      <div style="margin-top:14px; display:flex; gap:10px; align-items:center;">
+        <button id="nextQuestion" class="btn btn-primary btn-sm">Next question</button>
+        <div id="quizFeedback" style="font-weight:700;color:#444;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossary modal -->
+  <div class="modal fade" id="glossaryModal" tabindex="-1" aria-labelledby="glossaryLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content" style="border-radius:12px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="glossaryLabel">Glossary & Quick Facts</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <dl>
+            <dt><strong>Kartilya</strong></dt>
+            <dd>Short moral guide written by Emilio Jacinto for Katipunan members; emphasizes character, education, and civic duty.</dd>
+            <dt><strong>Katipunan</strong></dt>
+            <dd>Secret revolutionary society founded by Andrés Bonifacio that sought independence from Spain.</dd>
+            <dt><strong>RA 1425 (Rizal Law)</strong></dt>
+            <dd>Philippine law requiring the study of Rizal’s life and works in schools; passed in 1956 to promote nationalism and critical thinking.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image preview modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content" style="border-radius:12px;">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageModalLabel">Preview</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" alt="Preview" style="max-width:100%; max-height:70vh; border-radius:8px;" />
+          <p id="modalHint" class="text-muted" style="margin-top:12px;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>A digital archive dedicated to José Rizal's life, works, and enduring legacy</p>
+    <p>© 2024 José Rizal Digital Collection | All Rights Reserved</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // DOM ready helper
+    function onReady(fn) {
+      if (document.readyState === 'complete' || document.readyState === 'interactive') setTimeout(fn,0);
+      else document.addEventListener('DOMContentLoaded', fn);
+    }
+
+    onReady(function() {
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Hero entrance
+      const hero = document.getElementById('heroBlock');
+      if (hero) {
+        if (prefersReduced) hero.classList.add('visible');
+        else setTimeout(()=>hero.classList.add('visible'), 60);
+      }
+
+      // Lazy load images (data-src)
+      const lazyImgs = document.querySelectorAll('.card-image');
+      const lazyObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            const img = e.target;
+            const src = img.dataset.src;
+            if (src) {
+              img.src = src;
+              img.onload = () => img.style.opacity = '1';
+            }
+            obs.unobserve(img);
+          }
+        });
+      }, { threshold: 0.12 });
+      lazyImgs.forEach(img => lazyObserver.observe(img));
+
+      // Intersection observer for cards with staggered animation
+      const cards = document.querySelectorAll('.group-card');
+      const cardObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // stagger based on index among visible
+            const visibleCards = Array.from(cards).filter(c => c.getBoundingClientRect().top < window.innerHeight);
+            const idx = Array.from(cards).indexOf(entry.target);
+            const delay = Math.min(idx * 0.08, 0.4);
+            entry.target.style.transitionDelay = delay + 's';
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -80px 0px' });
+      cards.forEach(c => cardObserver.observe(c));
+
+      // Timeline reveal
+      const timelineItems = document.querySelectorAll('.timeline-item');
+      const tObserver = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry, idx) => {
+          if (entry.isIntersecting) {
+            entry.target.style.transitionDelay = (idx * 0.06) + 's';
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18 });
+      timelineItems.forEach(item => tObserver.observe(item));
+
+      // Expandable bios
+      document.querySelectorAll('[data-bio]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = 'bio-' + btn.getAttribute('data-bio');
+          const el = document.getElementById(id);
+          if (!el) return;
+          const visible = el.classList.toggle('visible');
+          el.setAttribute('aria-hidden', !visible);
+          btn.textContent = visible ? 'Hide bio' : 'Read short bio';
+        });
+      });
+
+      // Modal preview for image wrappers
+      const modalEl = document.getElementById('imageModal');
+      const modal = new bootstrap.Modal(modalEl);
+      const modalImg = document.getElementById('modalImage');
+      const modalHint = document.getElementById('modalHint');
+
+      document.querySelectorAll('[data-role="zoom"]').forEach(wrapper => {
+        wrapper.addEventListener('click', () => {
+          const img = wrapper.querySelector('.card-image');
+          const title = wrapper.getAttribute('data-title') || 'Preview';
+          if (img && img.src) {
+            modalImg.src = img.src;
+            modalHint.textContent = '';
+            document.getElementById('imageModalLabel').textContent = title;
+            modal.show();
+          } else {
+            modalImg.src = '';
+            document.getElementById('imageModalLabel').textContent = title + ' (no image yet)';
+            modalHint.textContent = 'No image set. Suggested image: ' + title + '. Replace the placeholder by setting data-src or src on the image element.';
+            modal.show();
+          }
+        });
+      });
+
+      // Quiz logic (friendly feedback)
+      const quizQuestions = [
+        { q: 'Which leader used "Rizal" as a Katipunan password?', options: ['Emilio Jacinto','Andrés Bonifacio','Apolinario Mabini','Antonio Luna'], correct:1 },
+        { q: 'Which text reflected Rizal’s emphasis on character and education?', options: ['Kartilya','Mi Último Adiós','Noli Me Tangere','La Solidaridad'], correct:0 },
+        { q: 'Which law mandated study of Rizal’s life and works?', options: ['RA 1425','RA 1426','RA 1956','RA 1898'], correct:0 }
+      ];
+      let quizIndex = 0;
+      const quizQuestionEl = document.getElementById('quizQuestion');
+      const quizOptionsEl = document.getElementById('quizOptions');
+      const quizFeedback = document.getElementById('quizFeedback');
+      const nextBtn = document.getElementById('nextQuestion');
+
+      function loadQuiz(i) {
+        const q = quizQuestions[i];
+        quizQuestionEl.textContent = q.q;
+        quizOptionsEl.innerHTML = '';
+        q.options.forEach((opt, idx) => {
+          const div = document.createElement('div');
+          div.className = 'quiz-option';
+          div.tabIndex = 0;
+          div.textContent = opt;
+          div.dataset.correct = (idx === q.correct) ? 'true' : 'false';
+          div.addEventListener('click', onSelectOption);
+          div.addEventListener('keypress', (e) => { if (e.key === 'Enter') div.click(); });
+          quizOptionsEl.appendChild(div);
+        });
+        quizFeedback.textContent = '';
+      }
+
+      function onSelectOption(e) {
+        const el = e.currentTarget;
+        const correct = el.dataset.correct === 'true';
+        document.querySelectorAll('.quiz-option').forEach(o => { o.classList.remove('correct','wrong'); o.style.pointerEvents = 'none'; });
+        if (correct) {
+          el.classList.add('correct');
+          quizFeedback.textContent = 'Correct ✓';
+          quizFeedback.style.color = '#2ea44f';
+        } else {
+          el.classList.add('wrong');
+          quizFeedback.textContent = 'Not quite — review the card above';
+          quizFeedback.style.color = '#d9534f';
+          const correctEl = Array.from(document.querySelectorAll('.quiz-option')).find(x => x.dataset.correct === 'true');
+          if (correctEl) correctEl.classList.add('correct');
+        }
+      }
+
+      nextBtn.addEventListener('click', () => {
+        quizIndex = (quizIndex + 1) % quizQuestions.length;
+        loadQuiz(quizIndex);
+      });
+
+      loadQuiz(0);
+
+      // Glossary modal
+      document.getElementById('openGlossary').addEventListener('click', () => {
+        const gm = new bootstrap.Modal(document.getElementById('glossaryModal'));
+        gm.show();
+      });
+
+      // More context / sources buttons
+      document.getElementById('moreLeadersBtn').addEventListener('click', () => showToast('Suggested reading: compare Rizal’s essays with Asian reformist writings; assign short research tasks.'));
+      document.getElementById('sourcesBtn').addEventListener('click', () => showToast('Primary sources: Rizal’s letters, La Solidaridad essays, Aguinaldo proclamations. Add scanned images to the placeholders for classroom use.'));
+
+      // Toast helper
+      function showToast(text) {
+        const t = document.createElement('div');
+        t.textContent = text;
+        t.style.position = 'fixed';
+        t.style.right = '18px';
+        t.style.bottom = '18px';
+        t.style.background = 'rgba(26,26,26,0.92)';
+        t.style.color = '#fff';
+        t.style.padding = '12px 16px';
+        t.style.borderRadius = '8px';
+        t.style.boxShadow = '0 8px 24px rgba(0,0,0,0.3)';
+        t.style.zIndex = 9999;
+        document.body.appendChild(t);
+        setTimeout(()=>{ t.style.opacity='0'; t.style.transform='translateY(8px)'; }, 2600);
+        setTimeout(()=>document.body.removeChild(t), 3200);
+      }
+
+      // Keyboard focus outlines (accessibility)
+      document.addEventListener('keydown', (e) => { if (e.key === 'Tab') document.body.classList.add('show-focus'); });
+
+    }); // onReady end
+  </script>
+
+  <script src="js/legacy-js.js"></script>
+
+</body>
+</html>
